@@ -1,0 +1,251 @@
+# More types: structs, slices, and maps.
+
+
+### Estructuras y tipos
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    fmt.Println(Vertex{1, 2})
+}
+
+```
+Una estructura (struct) es un registro de variables dentro de un mismo tipo.
+
+(Y una declaración type declara un nuevo tipo de datos.)
+
+### Campos de una estructura
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    v := Vertex{1, 2}
+    v.X = 4
+    fmt.Println(v.X)
+}
+```
+Los campos de una estructura son accesibles mediante el operador . (punto).
+
+### Punteros
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    p := Vertex{1, 2}
+    q := &p
+    q.X = 1e9
+    fmt.Println(p)
+}
+```
+Go posee punteros, pero no tiene aritmética de punteros (como C).
+
+Los campos de las estructuras pueden accederse a través de un puntero a una estructura.
+
+La indirección del puntero es transparente al programador.
+
+### Estructuras literales
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X, Y int
+}
+
+var (
+    p = Vertex{1, 2}  // Tiene tipo Vertex
+    q = &Vertex{1, 2} // Tiene tipo *Vertex
+    r = Vertex{X: 1}  // Y:0 es implicito
+    s = Vertex{}      // X:0 e Y:0
+)
+
+func main() {
+    fmt.Println(p, q, r, s)
+}
+
+```
+Una estructura literal denota una nueva instancia de la estructura que muestra los valores de sus campos.
+
+Puedes mostrar sólo un subconjunto de los campos utilizando la sintaxis Name:. (Y el orden de los campos nombrados es irrelevante.)
+
+El prefijo especial & construye un puntero al espacio donde la nueva estructura se aloja.
+
+
+
+### La función `new`
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X, Y int
+}
+
+func main() {
+    v := new(Vertex)
+    fmt.Println(v)
+    v.X, v.Y = 11, 9
+    fmt.Println(v)
+}
+```
+La expresión new(T) aloja en memoria un valor T inicializado a 0 y retorna un puntero al mismo.
+```
+var t *T = new(T)
+```
+o
+```
+t := new(T)
+```
+### Slices
+```go
+package main
+
+import "fmt"
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println("p ==", p)
+
+    for i := 0; i < len(p); i++ {
+        fmt.Printf("p[%d] == %d\n",
+            i, p[i])
+    }
+}
+
+```
+Un slice apunta a un array de valores y posee un tamaño.
+
+[]T es un slice con elementos de tipo T.
+
+### Slicing slices
+```go
+package main
+
+import "fmt"
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println("p ==", p)
+    fmt.Println("p[1:4] ==", p[1:4])
+
+    // Un valor de inicio omitido implica 0
+    fmt.Println("p[:3] ==", p[:3])
+
+    // Un valor de fin omitido implica len(s)
+    fmt.Println("p[4:] ==", p[4:])
+}
+
+```
+Los slices pueden ser reasignados, creando un nuevo slice que apunte al mismo array.
+
+La expresión
+```
+s[lo:hi]
+```
+es evaluada como un slice de elementos desde el elemento de índice lo hasta el elemento hi-1 inclusive. Por tanto
+```
+s[lo:lo]
+```
+es un slice vacío y
+```
+s[lo:lo+1]
+```
+tiene un elemento.
+
+### Creando slices
+```go
+package main
+
+import "fmt"
+
+func main() {
+    a := make([]int, 5)
+    printSlice("a", a)
+    b := make([]int, 0, 5)
+    printSlice("b", b)
+    c := b[:2]
+    printSlice("c", c)
+    d := c[2:5]
+    printSlice("d", d)
+}
+
+func printSlice(s string, x []int) {
+    fmt.Printf("%s len=%d cap=%d %v\n",
+        s, len(x), cap(x), x)
+}
+```
+Los slices son creados con la función make. Funciona alojando un array inicializado a 0 y retornando un slice que apunta a ese array:
+```
+a := make([]int, 5)  // len(a)=5
+```
+Los slices tienen un tamaño y una capacidad. La capacidad de un slice es el tamaño máximo que el slice puede crecer dentro del array al que apunta.
+
+Para especificar una capacidad basta con pasar un tercer argumento a make:
+```
+b := make([]int, 0, 5)
+// len(b)=0, cap(b)=5
+```
+Los slices pueden crecer reasignándose (por encima de su capacidad):
+```
+b = b[:cap(b)] // len(b)=5, cap(b)=5
+b = b[1:]      // len(b)=4, cap(b)=4
+```
+
+### Slices nil
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var z []int
+    fmt.Println(z, len(z), cap(z))
+    if z == nil {
+        fmt.Println("¡nulo!")
+    }
+}
+
+```
+El valor por defecto de un slice es nil.
+
+Un slice nil tiene un tamaño y una longitud de 0.
+
+(Para más detalle por favor mira el artículo (en inglés) "Go Slices: usage and internals".) http://golang.org/doc/articles/slices_usage_and_internals.html
+### Range
+```go
+package main
+
+import "fmt"
+
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+    for i, v := range pow {
+        fmt.Printf("2**%d = %d\n", i, v)
+    }
+}
+
+```
