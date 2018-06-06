@@ -1,13 +1,18 @@
 
 ## Temas
 
-Referencia: https://tour.golang.org/list
+Contenido del curso.
 
+##### Primera parte:
+Seguiremos el orden propuesto por el Go Tour.
 
-Ver: https://tour.golang.org/concurrency/11
-https://golang.org/doc/articles/wiki/
-https://talks.golang.org/2012/simple.slide#16
-https://talks.golang.org/2012/concurrency.slide#18
+##### Segunda parte:
+Pondremos en practica los conocimientos adquiridos implementando una serie de ejemplos:
+
+- Servicio web REST/JSON
+- Conexión con Oracle y MySQL
+- Conexión con MongoDB
+- JSON Web Tokens
 
 ### Packages, variables, and functions.
 
@@ -121,3 +126,5 @@ https://talks.golang.org/2012/concurrency.slide#18
 * sync.Mutex
 * Exercise: Web Crawler
 * Where to Go from here...
+
+Referencia: https://tour.golang.org/list

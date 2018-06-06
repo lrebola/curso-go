@@ -5,3 +5,11 @@ Luego que avancemos con lo fundamental de Go siguiendo la documentacion oficial 
 Crear un servicio REST con JSON y consumirlo utilizando Postman.
 
 Le añadiremos seguridad con un sistemma de web tokens y login de usuario.
+
+
+
+
+Ver: https://tour.golang.org/concurrency/11
+https://golang.org/doc/articles/wiki/
+https://talks.golang.org/2012/simple.slide#16
+https://talks.golang.org/2012/concurrency.slide#18
