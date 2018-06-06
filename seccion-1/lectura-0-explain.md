@@ -13,3 +13,21 @@ Ver: https://tour.golang.org/concurrency/11
 https://golang.org/doc/articles/wiki/
 https://talks.golang.org/2012/simple.slide#16
 https://talks.golang.org/2012/concurrency.slide#18
+
+https://github.com/a8m/go-lang-cheat-sheet#basic-syntax
+
+Compiles to native code (no JVM)
+
+Credits
+Most example code taken from A Tour of Go, which is an excellent introduction to Go. If you're new to Go, do that tour. Seriously.
+
+https://golangbot.com/functions/
+
+https://learnxinyminutes.com/docs/go/
+
+https://github.com/golang/go/wiki/Mobile
+
+https://golang.org/pkg/net/http/
+
+https://hackernoon.com/how-to-create-a-web-server-in-go-a064277287c9
+https://github.com/golang/go/wiki/CodeReviewComments
