@@ -1,6 +1,6 @@
-# Go
+# Introducción
 
-### Características
+## Características
 - Go es un lenguaje de programación de código abierto
 - Es un lenguaje tipado estáticamente y compilado
 - Es un lenguaje de programación concurrente y compilado

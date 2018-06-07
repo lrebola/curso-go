@@ -1,6 +1,7 @@
 # Temas
 
 ## Parte I
+Orden de temas propuestos por Go Tour.
 
 ### Packages, variables, and functions.
 
@@ -116,6 +117,6 @@
 
 ## Parte II
 
-
+Desarrollo de ejemplos.
 
 Referencia: https://tour.golang.org/list

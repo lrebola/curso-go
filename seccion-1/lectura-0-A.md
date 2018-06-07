@@ -10,7 +10,10 @@ Comenzando desde los conceptos básicos, siempre siguiendo la **documentación o
 ## Organización del curso
 
 ##### Parte I: Una nueva esperanza.
-Introducción y conceptos básicos: Seguiremos el orden de temas propuesto por el *Go Tour* acompañado de ejemplos prácticos.
+ * Introducción
+ * Instalación
+ * IDEs
+ * Conceptos básicos: Seguiremos el orden de temas propuesto por el *Go Tour* acompañado de ejemplos prácticos.
 
 ##### Parte II:  El despertar de la fuerza.
 Pondremos en practica los conocimientos adquiridos en la primer parte implementando una serie de ejemplos:
