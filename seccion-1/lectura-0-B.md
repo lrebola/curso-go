@@ -1,3 +1,7 @@
+# Temas
+
+## Parte I
+
 ### Packages, variables, and functions.
 
 * Packages
@@ -97,7 +101,6 @@
 * Exercise: Images
 * Congratulations!
 
-
 ### Concurrency
 * Goroutines
 * Channels
@@ -110,5 +113,9 @@
 * sync.Mutex
 * Exercise: Web Crawler
 * Where to Go from here...
+
+## Parte II
+
+
 
 Referencia: https://tour.golang.org/list
