@@ -1,3 +1,16 @@
+JEDI GO
+
+Curso de maestro Jedi en Go
+
+Este curso esta pensado para que aprendas todo lo necesario para iniciarte en *Go* desde **cero a experto.**
+
+Dirigido a estudiantes, profesionales y aficionados de la programación.
+
+Comenzaremos desde los conceptos basicos siguiendo la documentación oficial y llegaremos a construir ejemplos utiles.
+
+
+
+
 Hay una buena cantidad de documentacion oficial de Go, y nos basaremos en ella para el desarrollo del curso y para que tambien una vez finalziado el curso tengan los recursos para quienes quiran profundizar más.
 
 Luego que avancemos con lo fundamental de Go siguiendo la documentacion oficial procederemos a trabajar con ejemplos de acceso a base de datos Oracle, MySQL y MongoDB.
