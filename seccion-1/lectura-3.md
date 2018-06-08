@@ -21,4 +21,4 @@ A continuación, la documentación de *Go* utilizada para el desarrollo del curs
 * [Go on Twitter](https://twitter.com/golang)
 ___
 
-[1](./lectura-1.md), [2](./lectura-2.md) - [Siguiente >>](./lectura-3.md)
+[1](./lectura-1.md), [2](./lectura-2.md) - [Siguiente >>](./lectura-4.md)
