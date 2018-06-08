@@ -37,4 +37,4 @@ Lista completa de IDEs y plugins:
 https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins
 ___
 
-Página: [1](./lectura-1.md), [2](./lectura-2.md), [3](./lectura-3.md), [4]
+###### Página: [1](./lectura-1.md), [2](./lectura-2.md), [3](./lectura-3.md), [4]

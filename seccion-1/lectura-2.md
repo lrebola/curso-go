@@ -132,4 +132,4 @@ Desarrollo de ejemplos.
 
 ___
 
-Página: [1](./lectura-1.md), [2] - [Siguiente >>](./lectura-3.md)
+###### Página: [1](./lectura-1.md), [2] - [Siguiente >>](./lectura-3.md)
