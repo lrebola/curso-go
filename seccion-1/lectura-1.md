@@ -27,4 +27,4 @@ Pondremos en practica los conocimientos adquiridos en la primer parte implementa
 
 ___
 
-[Siguiente >>](./lectura-2.md)
+Página: [1] - [Siguiente >>](./lectura-2.md)
