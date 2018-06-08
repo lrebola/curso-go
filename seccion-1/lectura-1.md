@@ -5,7 +5,7 @@ Este curso esta pensado para que aprendas todo lo necesario para iniciarte en *G
 
 Comenzando desde los conceptos básicos, siempre siguiendo la **documentación oficial** y desarrollando ejemplos útiles en código.
 
-![alt text](imgs/the_gopher.png "The_Gopher")
+![alt text](../resources/imgs/the_gopher.png "The_Gopher")
 
 ## Organización del curso
 
