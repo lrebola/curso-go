@@ -1,32 +1,29 @@
 # Introducción
 
 ## Características
-- Go es un lenguaje de programación de código abierto
-- Es un lenguaje tipado estáticamente y compilado
-- Es un lenguaje de programación concurrente y compilado
-- Desarrollado por Google
-- Disponible en formato binario para los sistemas operativos Windows, GNU/Linux, FreeBSD y Mac OS X
-- Go es un lenguaje de programación compilado, concurrente, imperativo, estructurado, orientado a objetos —de una manera bastante especial—
-- Go usa tipado estático
-- Go admite el paradigma de programación orientada a objetos, pero a diferencia de los lenguajes de programación más populares no dispone de herencia de tipos y tampoco de palabras clave que denoten claramente que soporta este paradigma.
-- Otro detalle que puede resultar confuso es que la definición de un tipo ("clase") se realiza por medio de declaraciones separadas (interfaces, structs, embedded values).
-- Go no tiene excepciones.
-- En Go el uso del carácter punto y coma “;“ al final de una instrucción es opcional..
-- Go tiene tipos y métodos, y permite un estilo de programación orientado a objetos, pero no admite construir jerarquías, es decir, no admite la herencia, q
 
+Algunas de sus características principales son:
 
+* Open Source
+* Tipado estático
+* Compila a código máquina
+* Multiplataforma
+* Concurrente
+* Garbage collector
+* Orientado a objetos, "si y no"
 
+## Instalando Go
 
-### Instalando Go
+Para la instalación de *Go* descargaremos desde su [página](https://golang.org/dl/) el instalador correspondiente al Sistema Operativo que vayamos a usar.
 
-https://golang.org/doc/install
-https://golang.org/dl/
-
+```sh
 export GOROOT=$HOME/go1.X
 export PATH=$PATH:$GOROOT/bin
+```
 
+###### Referencia: https://golang.org/doc/install
 
-### Editores y plugins para Go
+## Editores y plugins para Go
 
 Hay una larga lista de editores
 

@@ -50,3 +50,36 @@ https://github.com/golang/go/wiki/CodeReviewComments
 https://www.aerofs.com/introducing-gockerize-md/
 https://jm33.me/parsing-large-xml-with-go.html
 https://blog.cloudboost.io/reading-humongous-files-in-go-c894b05ac020
+
+
+
+
+
+
+
+
+
+lectura 4:
+
+The Go programming language is an open source project to make programmers more productive.
+
+- Go es un lenguaje de programación de código abierto
+
+Aún siendo un lenguaje diseñado para la programación de sistemas, provee de un recolector de basura, reflexión y otras capacidades de alto nivel que lo convierten en un lenguaje muy potente.
+
+https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/
+
+https://golang.org/doc/faq#Is_Go_an_object-oriented_language
+
+
+- Es un lenguaje tipado estáticamente y compilado
+- Es un lenguaje de programación concurrente y compilado
+- Desarrollado por Google
+- Disponible en formato binario para los sistemas operativos Windows, GNU/Linux, FreeBSD y Mac OS X
+- Go es un lenguaje de programación compilado, concurrente, imperativo, estructurado, orientado a objetos —de una manera bastante especial—
+- Go usa tipado estático
+- Go admite el paradigma de programación orientada a objetos, pero a diferencia de los lenguajes de programación más populares no dispone de herencia de tipos y tampoco de palabras clave que denoten claramente que soporta este paradigma.
+- Otro detalle que puede resultar confuso es que la definición de un tipo ("clase") se realiza por medio de declaraciones separadas (interfaces, structs, embedded values).
+- Go no tiene excepciones.
+- En Go el uso del carácter punto y coma “;“ al final de una instrucción es opcional..
+- Go tiene tipos y métodos, y permite un estilo de programación orientado a objetos, pero no admite construir jerarquías, es decir, no admite la herencia, q
