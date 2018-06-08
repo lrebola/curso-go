@@ -1,4 +1,4 @@
-### Bienvenidos al Curso de Go:
+## Bienvenidos al Curso de Go:
 # DE CERO A MAESTRO JEDI
 
 Este curso esta pensado para que aprendas todo lo necesario para iniciarte en *Go* desde **cero a experto.**
@@ -24,5 +24,3 @@ Pondremos en practica los conocimientos adquiridos en la primer parte implementa
 - JSON Web Tokens
 - Login OAuth2
 - Crypto
-
-<sub>"Una nueva esperanza" y "El despertar de la fuerza" son marca registradas ® de Walt Disney Company.</sub>
