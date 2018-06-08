@@ -117,8 +117,15 @@ En orden propuesto por *Go Tour*.
 * Exercise: Web Crawler
 * Where to Go from here...
 
+###### Referencia: https://tour.golang.org/list
+
 ## Parte II
 
 Desarrollo de ejemplos.
 
-Referencia: https://tour.golang.org/list
+* Servicio web REST/JSON
+* Conexión con Oracle y MySQL
+* Conexión con MongoDB
+* JSON Web Tokens
+* Login OAuth2
+* Crypto
