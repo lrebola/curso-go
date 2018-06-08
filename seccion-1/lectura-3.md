@@ -19,3 +19,6 @@ A continuación, la documentación de *Go* utilizada para el desarrollo del curs
 * [Go Blog](https://blog.golang.org/)
 * [Go+ Community](https://plus.google.com/communities/114112804251407510571)
 * [Go on Twitter](https://twitter.com/golang)
+___
+
+[1](./lectura-1.md), [2](./lectura-2.md) - [Siguiente >>](./lectura-3.md)

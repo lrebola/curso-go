@@ -25,4 +25,6 @@ Pondremos en practica los conocimientos adquiridos en la primer parte implementa
 - Login OAuth2
 - Crypto
 
+___
+
 [Siguiente >>](./lectura-2.md)
