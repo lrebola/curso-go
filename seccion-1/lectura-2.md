@@ -1,21 +1,124 @@
-# Documentación
+# Temas
 
-A continuación, la documentación de *Go* utilizada para el desarrollo del curso. Al finalizar serán recursos útiles para seguir aprendiendo.
+Listado de temas.
 
-* [Getting Started](https://golang.org/doc/install): Instalación.
-* [Command go](https://golang.org/cmd/go/): Listado de comandos de la *Go tools*.
-* [Editor plugins and IDEs](https://golang.org/doc/editors.html): Herramientas para desarrollar.
-* [Effective Go](https://golang.org/doc/effective_go.html): Documentación.
-* [Documentación](https://golang.org/doc/): Documentación general.
-* [Code](https://golang.org/doc/code.html): Como desarrollar un programa en *Go*.
-* [Language Spec](https://golang.org/ref/spec): Especificación y referencia del lenguaje.
-* [Paquetes](https://golang.org/pkg/): Listado de paquetes y librerías.
+## Parte I
+En orden propuesto por *Go Tour*.
 
-### Otros enlaces
-* [Sitio web](https://golang.org/)
-* [Downloads](https://golang.org/dl/)
-* [Go Playground](https://play.golang.org/)
-* [Go Tour](https://tour.golang.org/)
-* [Go Blog](https://blog.golang.org/)
-* [Go+ Community](https://plus.google.com/communities/114112804251407510571)
-* [Go on Twitter](https://twitter.com/golang)
+### Packages, variables, and functions.
+
+* Packages
+* Imports
+* Exported names
+* Functions
+* Functions continued
+* Multiple results
+* Named return values
+* Variables
+* Variables with initializers
+* Short variable declarations
+* Basic types
+* Zero values
+* Type conversions
+* Type inference
+* Constants
+* Numeric Constants
+* Congratulations!
+
+
+### Flow control statements: for, if, else, switch and defer
+
+* For
+* For continued
+* For is Go's "while"
+* Forever
+* If
+* If with a short statement
+* If and else
+* Exercise: Loops and Functions
+* Switch
+* Switch evaluation order
+* Switch with no condition
+* Defer
+* Stacking defers
+* Congratulations!
+
+
+### More types: structs, slices, and maps.
+
+* Pointers
+* Structs
+* Struct Fields
+* Pointers to structs
+* Struct Literals
+* Arrays
+* Slices
+* Slices are like references to arrays
+* Slice literals
+* Slice defaults
+* Slice length and capacity
+* Nil slices
+* Creating a slice with make
+* Slices of slices
+* Appending to a slice
+* Range
+* Range continued
+* Exercise: Slices
+* Maps
+* Map literals
+* Map literals continued
+* Mutating Maps
+* Exercise: Maps
+* Function values
+* Function closures
+* Exercise: Fibonacci closure
+* Congratulations!
+
+
+### Methods and interfaces
+
+* Methods
+* Methods are functions
+* Methods continued
+* Pointer receivers
+* Pointers and functions
+* Methods and pointer indirection
+* Methods and pointer indirection (2)
+* Choosing a value or pointer receiver
+* Interfaces
+* Interfaces are implemented implicitly
+* Interface values
+* Interface values with nil underlying values
+* Nil interface values
+* The empty interface
+* Type assertions
+* Type switches
+* Stringers
+* Exercise: Stringers
+* Errors
+* Exercise: Errors
+* Readers
+* Exercise: Readers
+* Exercise: rot13Reader
+* Images
+* Exercise: Images
+* Congratulations!
+
+### Concurrency
+* Goroutines
+* Channels
+* Buffered Channels
+* Range and Close
+* Select
+* Default Selection
+* Exercise: Equivalent Binary Trees
+* Exercise: Equivalent Binary Trees
+* sync.Mutex
+* Exercise: Web Crawler
+* Where to Go from here...
+
+## Parte II
+
+Desarrollo de ejemplos.
+
+Referencia: https://tour.golang.org/list
