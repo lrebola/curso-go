@@ -44,3 +44,9 @@ https://golang.org/pkg/net/http/
 
 https://hackernoon.com/how-to-create-a-web-server-in-go-a064277287c9
 https://github.com/golang/go/wiki/CodeReviewComments
+
+
+
+https://www.aerofs.com/introducing-gockerize-md/
+https://jm33.me/parsing-large-xml-with-go.html
+https://blog.cloudboost.io/reading-humongous-files-in-go-c894b05ac020
