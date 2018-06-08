@@ -2,7 +2,7 @@
 
 ![alt text](resources/imgs/the_gopher.png "The_Gopher")
 
-##Estructura del curso
+## Estructura del curso
 
 * Sección 1
 * Sección 2
