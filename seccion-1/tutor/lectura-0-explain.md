@@ -83,3 +83,23 @@ https://golang.org/doc/faq#Is_Go_an_object-oriented_language
 - Go no tiene excepciones.
 - En Go el uso del carácter punto y coma “;“ al final de una instrucción es opcional..
 - Go tiene tipos y métodos, y permite un estilo de programación orientado a objetos, pero no admite construir jerarquías, es decir, no admite la herencia, q
+
+
+
+
+instalacion:
+https://zainul.gitbooks.io/learn-go/content/gopath-vs-goroot.html
+
+https://github.com/golang/go/wiki/SettingGOPATH
+
+The Go path is used to resolve import statements.
+
+The GOPATH environment variable lists places to look for Go code.
+
+ If the environment variable is unset, GOPATH defaults to a subdirectory named "go" in the user's home directory ($HOME/go on Unix, %USERPROFILE%\go on Windows), unless that directory holds a Go distribution. Run "go env GOPATH" to see the current GOPATH.
+
+ The GOPATH environment variable specifies the location of your workspace.
+
+ Note that GOPATH must not be the same path as your Go installation.
+
+ The GOROOT tree is always scanned in its entirety before GOPATH.
