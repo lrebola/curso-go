@@ -25,7 +25,7 @@ Luego de la instalación debemos tener en cuenta las siguientes dos variables de
 ##### `GOROOT`
 El instalador binario de *Go* comunmente se instala en:
 |OS|PATH|
-|---|---|
+|------|------|
 |Linux y Mac OS|/usr/local/go|
 |Windows|C:\Go|
 
