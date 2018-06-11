@@ -312,5 +312,10 @@ Intenta también imprimir el valor needInt(Big).
 
 (An int can store at maximum a 64-bit integer, and sometimes less.)
 
+## Referencias
+
+* https://tour.golang.org
+
+___
+
 ###### Página: [1] - [Siguiente >>](./lectura-2.md)
-###### Página: [1](./lectura-1.md), [2](./lectura-2.md), [3](./lectura-3.md), [4]
