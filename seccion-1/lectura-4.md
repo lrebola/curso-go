@@ -60,7 +60,7 @@ $ go version
 
 ## Editores y plugins
 
-Tenemos una amplia variedad de opciones para desarrollar en *Go* que podremos ver en el  [Github](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) y seguramente elegir nuestro editor favorito.
+Tenemos una amplia variedad de opciones para desarrollar en *Go* que podremos ver  [acá](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) y seguramente elegir nuestro editor favorito.
 
 Algunas opciones recomendables son:
 
