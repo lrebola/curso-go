@@ -25,7 +25,7 @@ Luego de la instalación debemos tener en cuenta las siguientes dos variables de
 ##### `GOROOT`
 El instalador binario de *Go* comunmente se instala en:
 |OS|PATH|
-|-|-|
+|---|---|
 |Linux y Mac OS|/usr/local/go|
 |Windows|C:\Go|
 
@@ -58,9 +58,11 @@ Verificar la version:
 $ go version
 ```
 
-## Editores y plugins para Go
+## Editores y plugins
 
-Tenemos muchas opciones, en el [Githib de Go](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) hay un listado extenso. Algunas opciones recomendables son:
+Tenemos una amplia variedad de opciones para desarrollar en *Go* que podremos ver en el  [Github](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) y seguramente elegir nuestro editor favorito.
+
+Algunas opciones recomendables son:
 
 | IDE | Plugin |
 | ------ | ------ |
