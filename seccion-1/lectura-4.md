@@ -54,9 +54,27 @@ GOROOT="/usr/local/go"
 
 ## Comprobar la instalación
 
-Verificar la version:
+Verificarmos invocando al comando *go* para imprimir su versin:
 ```sh
 $ go version
+```
+
+Crearemos el fichero `hola-mundo.go`:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hola Mundo")
+}
+```
+
+Compilamos y ejecutamos:
+
+```sh
+$ go run hola-mundo.go
 ```
 
 ## Editores y plugins

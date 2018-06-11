@@ -2,17 +2,9 @@
 
 Conceptos básicos
 
-## Packages, variables, and functions
+## Paquetes, variables, y funciones
 
-```go
-package main
 
-import "fmt"
-
-func main() {
-    fmt.Println("Hola Mundo")
-}
-```
 
 
 ### Paquetes
@@ -319,3 +311,6 @@ Una constante sin un tipo definido tiene el tipo necesitado según el contexto e
 Intenta también imprimir el valor needInt(Big).
 
 (An int can store at maximum a 64-bit integer, and sometimes less.)
+
+###### Página: [1] - [Siguiente >>](./lectura-2.md)
+###### Página: [1](./lectura-1.md), [2](./lectura-2.md), [3](./lectura-3.md), [4]
