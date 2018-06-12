@@ -7,10 +7,11 @@ Algunas de sus características principales son:
 * Open Source
 * Tipado estático
 * Compila a código máquina
-* Multiplataforma
+* Multiplataforma *
 * Concurrente
 * Garbage collector
-* Orientado a objetos, "si y no"
+* Sintaxis similar a la de C
+* Orientado a objetos, "no "
 
 ## Instalando Go
 
@@ -64,18 +65,53 @@ Crearemos el fichero `hola-mundo.go`:
 ```go
 package main
 
-import "fmt"
-
 func main() {
-    fmt.Println("Hola Mundo")
+	println("¡Hola Mundo!")
 }
 ```
 
-Compilamos y ejecutamos:
+Compilamos y ejecutamos con:
 
 ```sh
 $ go run hola-mundo.go
 ```
+## Ejecutar el código
+
+El código debe estar en el **workspace**, salvo no utilices la librería estándar de *Go* ni otras librerías de terceros.
+
+GOPATH define la ubicación de nuestro workspace.
+
+
+- `go run` compila y ejecuta el código.
+- `go build` compila y genera un ejecutable binario.
+
+## Go Tool
+
+Comandos de Go provistos por la *Go Tool*.
+
+```sh
+$ go command [arguments]
+```
+
+### Comandos
+| Comando | Descripción |
+| ----- | ----- |
+| `build` | Compila y genera un ejecutable binario. |
+| `clean` | Elimina archivos de la cache. |
+| `doc` | Muestra la documentación de un paquete o símbolo. |
+| `env` | Imprime las variables de entorno de *Go* |
+| `bug` | |
+| `fix` | Actualiza paquetes |
+| `fmt` | *gofmt* formatea el código fuente |
+| `generate` | |
+| `get` | |
+| `install` | |
+| `list` | |
+| `run` | compila y ejecuta el código | |
+| `test` | |
+| `tool` | |
+| `version` | |
+| `vet` | |
 
 ## Editores y plugins
 

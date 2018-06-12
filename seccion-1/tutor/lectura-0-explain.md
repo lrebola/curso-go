@@ -103,3 +103,33 @@ The GOPATH environment variable lists places to look for Go code.
  Note that GOPATH must not be the same path as your Go installation.
 
  The GOROOT tree is always scanned in its entirety before GOPATH.
+
+
+
+
+ ----
+
+
+ https://raulexposito.com/documentos/go/
+ https://groups.google.com/forum/#!forum/golang-nuts
+
+ es un lenguaje relativamente sencillo con una librería estandar relativamente simple.
+
+ Go tiene la naturaleza de simplificar la complejidad que hemos visto incluida en los lenguajes de programación en el último par de décadas mediante el uso de varios mecanismos.
+
+ nos ha cubierto la necesidad de disponer de algo que nos permita desarrollar aplicaciones de bajo y de alto nivel.
+
+ No hay que preocuparse sobre si los usuarios tienen Ruby o la JVM instalada o, si la tienen, qué versión tendrán.
+
+ la propia documentación de Go, en particular Effective Go, es buena.
+
+ Si buscas jugar un poco con Go deberías probar el Go Playground, el cual te permite ejecutar código en el navegador sin tener que instalar nada.
+
+
+ Excepto para los ejemplos sencillos, Go ha sido diseñado para funcionar siempre que tu código esté dentro de un workspace. El workspace es un directorio formado por los subdirectorios bin, pkg y src.
+
+}
+
+Guarda el fichero con el nombre main.go. De momento, puedes guardarlo donde quieras, los ejemplos triviales no necesitan estar dentro del workspace de Go.
+
+go run es un comando muy práctico que compila y ejecuta tu código.

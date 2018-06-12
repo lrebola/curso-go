@@ -4,9 +4,6 @@ Conceptos básicos
 
 ## Paquetes, variables, y funciones
 
-
-
-
 ### Paquetes
 ```go
 package main
@@ -22,6 +19,7 @@ func main() {
 ```
 - Todo programa en Go contiene paquetes.
 - Los programas comienzan su ejecución en el paquete **main**.
+- *En Go, el punto de entrada de un programa es una función llamada main ubicada en el paquete main.*
 - Este programa usa los paquetes con rutas de importación "fmt" y "math".
 
 Por convención, el nombre del paquete es el mismo que el último elemento de la ruta de importación.
