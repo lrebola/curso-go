@@ -1,3 +1,42 @@
+Markdown
+https://guides.github.com/features/mastering-markdown/
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+Intro Go
+https://www.genbetadev.com/herramientas/introduccion-al-lenguaje-de-programacion-go
+https://www.genbetadev.com/lenguajes-y-plataformas/empezar-a-aprender-go-golang
+
+
+Go no tiene aritmética de punteros, según los creadores, la razón es la seguridad. Sin aritmética de punteros es posible crear un lenguaje en el que no se puede obtener una dirección ilegal que sea usada de forma incorrecta. La falta de aritmética de punteros simplifica la implementación del recolector de basura. Además, optimizando el compilador y con el hardware actual, un bucle que utiliza los índices de un array puede ser tan eficaz como un bucle que utiliza aritmética de punteros.
+
+
+https://ed.team/blog/golang-el-lenguaje-de-programacion-creado-por-google
+https://ed.team/cursos/go
+
+
+https://golangcookbook.com/chapters/running/cross-compiling/
+https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04
+
+
+La notación de los comentarios es exactamente la misma que la de C++:
+```go
+/* ...
+   ...
+   ... */
+
+// ...
+```
+Bibliografia
+
+'The Little Go Book' en Castellano
+https://raulexposito.com/documentos/go/
+Go eficiente
+https://nachopacheco.gitbooks.io/go-es/content/doc/go-eficiente/index.html
+Go Books
+https://github.com/dariubs/GoBooks
+
+
+
 JEDI GO
 
 Curso de maestro Jedi en Go

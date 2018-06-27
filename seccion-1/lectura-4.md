@@ -55,10 +55,11 @@ GOROOT="/usr/local/go"
 
 ## Comprobar la instalación
 
-Verificarmos invocando al comando *go* para imprimir su versin:
+Verificarmos invocando al comando *go* para imprimir su versión:
 ```sh
 $ go version
 ```
+## Ejecutar código
 
 Crearemos el fichero `hola-mundo.go`:
 
@@ -75,12 +76,10 @@ Compilamos y ejecutamos con:
 ```sh
 $ go run hola-mundo.go
 ```
-## Ejecutar el código
 
-El código debe estar en el **workspace**, salvo no utilices la librería estándar de *Go* ni otras librerías de terceros.
+En este caso `println(string)` es una función predefinida, no requiere referenciar ningún paquete.
 
-GOPATH define la ubicación de nuestro workspace.
-
+El código siempre debe estar dentro del **workspace** *(definido por GOPATH)*, salvo no utilices las librerías estándar de *Go* ni otras librerías de terceros como en el ejemplo anterior.
 
 - `go run` compila y ejecuta el código.
 - `go build` compila y genera un ejecutable binario.
@@ -96,23 +95,38 @@ $ go command [arguments]
 ### Comandos
 | Comando | Descripción |
 | ----- | ----- |
-| `build` | Compila y genera un ejecutable binario. |
+| `build` | Compilar paquetes y dependencias. |
 | `clean` | Elimina archivos de la cache. |
 | `doc` | Muestra la documentación de un paquete o símbolo. |
-| `env` | Imprime las variables de entorno de *Go* |
-| `bug` | |
-| `fix` | Actualiza paquetes |
-| `fmt` | *gofmt* formatea el código fuente |
-| `generate` | |
-| `get` | |
-| `install` | |
-| `list` | |
-| `run` | compila y ejecuta el código | |
+| `env` | Imprime las variables de entorno de *Go*. |
+| `bug` | Iniciar un informe de error |
+| `fix` | Actualiza paquetes. |
+| `fmt` | *gofmt* formatea el código fuente. |
+| `generate` | Generar archivos Go por fuente de procesamiento |
+| `get` | Descargar e instalar paquetes y dependencias. |
+| `install` | Compilar e instalar paquetes y dependencias. |
+| `list` | Lista de paquetes. |
+| `run` | Compilar y ejecutar el programa Go. |
 | `test` | |
-| `tool` | |
-| `version` | |
-| `vet` | |
+| `tool` |  |
+| `version` | Imprimir la versión Go. |
+| `vet` | Reportar posibles errores en los paquetes. |
+| `help` | "go help [command]" para más información sobre un comando. |
 
+
+### Ejemplos:
+
+```sh
+$
+```
+
+```sh
+$
+```
+
+```sh
+$
+```
 ## Editores y plugins
 
 Tenemos una amplia variedad de opciones para desarrollar en *Go* que podremos ver  [acá](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) y seguramente elegir nuestro editor favorito.
@@ -128,6 +142,7 @@ Algunas opciones recomendables son:
 ## Referencias
 
 * https://golang.org/doc/install
+* https://golang.org/cmd/go/
 
 ___
 
