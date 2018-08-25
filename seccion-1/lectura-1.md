@@ -3,7 +3,7 @@
 
 Este curso esta pensado para que aprendas todo lo necesario para iniciarte en *Go* desde **cero a experto.**
 
-Comenzando desde los conceptos básicos, siempre siguiendo la **documentación oficial** y desarrollando ejemplos practicos en código.
+Comenzando desde los conceptos básicos, siguiendo la **documentación oficial** y desarrollando ejemplos prácticos en código.
 
 ![alt text](../resources/imgs/the_gopher.png "The_Gopher")
 
