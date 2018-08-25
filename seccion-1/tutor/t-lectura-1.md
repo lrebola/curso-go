@@ -23,5 +23,3 @@ En la siguiente parte, "El despertar de la fuerza" ya dominaremos el lenguaje y 
 Vamos a desarrollar ejemplos prácticos como un Web Service, JSON Web Tokens, autentificación, conexión a Base de Datos, utilizar librerías, etc.
 
 Es decir, en componentes comunes de una aplicación real.
-
-Sin más introducción comencemos, ¡Que la fuerza los acompañe!
