@@ -1,3 +1,5 @@
+Las presentaciones están disponibles en el GitHib del curso, en la URL:
+
 En el GitHub del curso podrán revisar más detenidamente el listado de temas por el cual iremos avanzando.
 
 Pero a modo de síntesis, en la Parte I seguiremos el orden de temas propuestos en el Go Tour del sitio oficial de Go.

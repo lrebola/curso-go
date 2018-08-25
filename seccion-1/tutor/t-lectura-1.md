@@ -8,15 +8,20 @@ El objetivo de este curso es que aprendas todo lo necesario para que puedas desa
 
 La metodología será siempre acompañar con código el marco teórico.
 
-En la primera parte del curso nos basaremos en la documentación oficial de GO para entrar en los conceptos básicos teóricos, y luego en una segunda parte nos enfocaremos a desarrollar ejemplos prácticos como un Web Service, Web Tokens, autentificación, una conexión a Base de Datos, etc.
+---
 
-Es decir, en componentes comunes de una aplicación real.
+Y la organización del curso será la siguiente, básicamente preparado en dos partes:
 
-¡Sin más introducción comencemos!
+La primera, a igual que la saga de George Lucas, decidí llamarla "Una nueva esperanza". Ya que iremos descubriendo la fuerza de Go, seremos los Luke Skywalker.
+
+Vamos a configurar nuestro entorno de desarrollo, y conoceremos los conceptos teóricos de Go a través de código.
 
 ---
 
+En la siguiente parte, "El despertar de la fuerza" ya dominaremos el lenguaje y comenzaremos a experimentar con él.
 
-Las presentaciones están disponibles en el GitHib del curso, en la URL:
+Vamos a desarrollar ejemplos prácticos como un Web Service, JSON Web Tokens, autentificación, conexión a Base de Datos, etc.
 
+Es decir, en componentes comunes de una aplicación real.
 
+Sin más introducción comencemos, ¡Que la fuerza los acompañe!
