@@ -20,7 +20,7 @@ Vamos a configurar nuestro entorno de desarrollo, y conoceremos los conceptos te
 
 En la siguiente parte, "El despertar de la fuerza" ya dominaremos el lenguaje y comenzaremos a experimentar con él.
 
-Vamos a desarrollar ejemplos prácticos como un Web Service, JSON Web Tokens, autentificación, conexión a Base de Datos, etc.
+Vamos a desarrollar ejemplos prácticos como un Web Service, JSON Web Tokens, autentificación, conexión a Base de Datos, utilizar librerías, etc.
 
 Es decir, en componentes comunes de una aplicación real.
 
