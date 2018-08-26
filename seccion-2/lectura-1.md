@@ -1,20 +1,21 @@
 # Parte I
 
-## Características de Go
+## ¿Qué es Go?
 
 Algunas de sus principales características son:
 
-* Open Source
-* Tipado estático
-* Compilado
-* Multiplataforma *
+* Open Source -
+* Compilado -
+* Multiplataforma -
+* Tipado estático -
+* Imperativo -
+* Estructurado -
+* ¿Orientado a objetos? -
 * Concurrente
-* Garbage collector
-* ¿Orientado a objetos?
-* Go no tiene excepciones.
-* Punto y coma
-* Aritmética de punteros
-* No utiliza clases, todo se maneja en paquetes.
+* Garbage collector -
+* Go no tiene excepciones. -
+* El punto y coma -
+* Aritmética de punteros -
 
 ## Instalando Go
 
