@@ -4,18 +4,18 @@
 
 Algunas de sus principales características son:
 
-* Open Source -
-* Compilado -
-* Multiplataforma -
-* Tipado estático -
-* Imperativo -
-* Estructurado -
-* ¿Orientado a objetos? -
+* Open Source
+* Compilado
+* Multiplataforma
+* Tipado estático
+* Imperativo
+* Estructurado
+* ¿Orientado a objetos?
 * Concurrente
-* Garbage collector -
-* Go no tiene excepciones. -
-* El punto y coma -
-* Aritmética de punteros -
+* Garbage collector
+* Aritmética de punteros
+* Go no tiene excepciones
+* El punto y coma
 
 ## Instalando Go
 
