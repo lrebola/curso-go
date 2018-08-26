@@ -6,7 +6,7 @@ Algunas de sus principales características son:
 
 * Open Source
 * Tipado estático
-* Compila a código máquina
+* Compilado
 * Multiplataforma *
 * Concurrente
 * Garbage collector
@@ -14,6 +14,7 @@ Algunas de sus principales características son:
 * Go no tiene excepciones.
 * Punto y coma
 * Aritmética de punteros
+* No utiliza clases, todo se maneja en paquetes.
 
 ## Instalando Go
 

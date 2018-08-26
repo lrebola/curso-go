@@ -35,11 +35,32 @@ Por defecto Go envía los argumentos como valor, si deseas que los argumentos se
 https://gustavopeiretti.com/go-punteros/
 https://gist.github.com/juanamari94/a06fbcc59d646750301d98aa7ca36289
 
+----
+
+**Go no tiene excepciones.** OK
+Según los creadores, las excepciones tienen que ser realmente excepcionales y el uso que se le da mayoritariamente no justifica su existencia porque al final se acaban usando como controladores del flujo de la aplicación.
+
+El código Go usa valores de error para indicar un estado anormal a través de un valor de retorno en cada función.
+
+De esta manera es más fácil ver cuales funciones regresan errores y manejarlos utilizando las mismas estructuras de control como lo hacemos con todas las demás tareas.
+
+http://goconejemplos.com/errores
+https://blog.golang.org/error-handling-and-go
 
 ----
 
-**Go no tiene excepciones.**
+**Compilado**
+Go es un lenguaje compilado a código máquina y multiplataforma.
 
+Soporta compilación cruzada, esto quiere decir que permite generar el binario para otra plataforma: Por ejemplo compilar sobre Windows el binario para ser desplegado en Linux.
+
+No tiene dependencias con otros software que deban estar instalados. Por ejemplo Java requiere la JVM.
+
+Además velocidad de compilación de Go es muy rápida en comparación a otros lenguajes.
+
+https://golangpost.blogspot.com/
+https://stackoverflow.com/questions/20829155/how-to-cross-compile-from-windows-to-linux
+https://github.com/golang/go/wiki/WindowsCrossCompiling
 
 ----
 
@@ -47,6 +68,8 @@ https://gist.github.com/juanamari94/a06fbcc59d646750301d98aa7ca36289
 Go tiene tipos y métodos, y permite un estilo de programación orientado a objetos, pero no admite construir jerarquías, es decir, no admite la herencia, q
 
 Go admite el paradigma de programación orientada a objetos, pero a diferencia de los lenguajes de programación más populares no dispone de herencia de tipos y tampoco de palabras clave que denoten claramente que soporta este paradigma.
+
+No cuenta con soporte para herencia (aspecto esencial que difiere de los lenguajes POO clásicos).
 
 ----
 

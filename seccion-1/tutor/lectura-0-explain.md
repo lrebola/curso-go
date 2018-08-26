@@ -7,7 +7,6 @@ https://www.genbetadev.com/herramientas/introduccion-al-lenguaje-de-programacion
 https://www.genbetadev.com/lenguajes-y-plataformas/empezar-a-aprender-go-golang
 
 
-Go no tiene aritmética de punteros, según los creadores, la razón es la seguridad. Sin aritmética de punteros es posible crear un lenguaje en el que no se puede obtener una dirección ilegal que sea usada de forma incorrecta. La falta de aritmética de punteros simplifica la implementación del recolector de basura. Además, optimizando el compilador y con el hardware actual, un bucle que utiliza los índices de un array puede ser tan eficaz como un bucle que utiliza aritmética de punteros.
 
 
 https://ed.team/blog/golang-el-lenguaje-de-programacion-creado-por-google
@@ -100,11 +99,6 @@ https://blog.cloudboost.io/reading-humongous-files-in-go-c894b05ac020
 
 lectura 4:
 
-The Go programming language is an open source project to make programmers more productive.
-
-- Go es un lenguaje de programación de código abierto
-
-Aún siendo un lenguaje diseñado para la programación de sistemas, provee de un recolector de basura, reflexión y otras capacidades de alto nivel que lo convierten en un lenguaje muy potente.
 
 https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/
 
