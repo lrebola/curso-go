@@ -1,74 +1,10 @@
-# Flow control statements: for, if, else, switch and defer
+# Parte I
 
-### For
-```go
-package main
+Conceptos básicos
 
-import "fmt"
+## Paquetes, variables, y funciones
 
-func main() {
-    sum := 0
-    for i := 0; i < 10; i++ {
-        sum += i
-    }
-    fmt.Println(sum)
-}
-
-```
-Go tiene sólo un operando para definir los bucles, los bucles for.
-
-El bucle for básico es muy parecido al que se utiliza en C o Java, salvo que los ( ) desaparecen (ni siquiera son opcionales) y las llaves { } son obligatorias.
-
-
-### For (continuación)
-```go
-package main
-
-import "fmt"
-
-func main() {
-    sum := 1
-    for ;sum < 1000; {
-        sum += sum
-    }
-    fmt.Println(sum)
-}
-
-```
-Como en C o Java, puedes dejar las instrucciones de inicialización e incremento vacías.
-
-
-
-### For es el "while" de Go
-```go
-package main
-
-import "fmt"
-
-func main() {
-    sum := 1
-    for sum < 1000 {
-        sum += sum
-    }
-    fmt.Println(sum)
-}
-
-```
-En este paso, puedes eliminar los puntos y coma ;: Un bucle while de C se transforma en un bucle for en Go.
-
-### Eterno
-```go
-package main
-
-func main() {
-    for {
-    }
-}
-
-```
-Si omites la condición del bucle, es un bucle infinito de manera que un bucle infinito se escribe de manera compacta.
-
-### If
+### Paquetes
 ```go
 package main
 
@@ -77,24 +13,19 @@ import (
     "math"
 )
 
-func sqrt(x float64) string {
-    if x < 0 {
-        return sqrt(-x) + "i"
-    }
-    return fmt.Sprint(math.Sqrt(x))
-}
-
 func main() {
-    fmt.Println(sqrt(2), sqrt(-4))
+    fmt.Println("Feliz día", math.Pi)
 }
-
 ```
-La instrucción if es similar a la sentencia en C o Java, salvo que los paréntesis ( ) desaparecen (ni siquiera son opcionales) y las llaves { } son obligatorias.
+- Todo programa en Go contiene paquetes.
+- Los programas comienzan su ejecución en el paquete **main**.
+- *En Go, el punto de entrada de un programa es una función llamada main ubicada en el paquete main.*
+- Este programa usa los paquetes con rutas de importación "fmt" y "math".
 
-(¿Te suena de algo?)
+Por convención, el nombre del paquete es el mismo que el último elemento de la ruta de importación.
 
 
-### If con instrucción inicial
+### Importación
 ```go
 package main
 
@@ -103,27 +34,21 @@ import (
     "math"
 )
 
-func pow(x, n, lim float64) float64 {
-    if v := math.Pow(x, n); v < lim {
-        return v
-    }
-    return lim
-}
-
 func main() {
-    fmt.Println(
-        pow(3, 2, 10),
-        pow(3, 3, 20),
-    )
+    fmt.Printf("Ahora tienes %g problemas.",
+        math.Nextafter(2, 3))
 }
 ```
-Al igual que en la sentencia for, la sentencia if puede empezar con una instrucción de inicialización que se ejecutará antes de evaluar la condición.
+Éste código agrupa las importaciones entre paréntesis de forma "factorizada". Tambien puedes realizar multiples importaciones de la siguiente forma:
 
-Las variables declaradas por la instrucción de inicialización son únicamente visibles en el ámbito del if.
+```
+import "fmt"
+import "math"
+```
+pero es común usar la forma factorizada para eliminar código innecesario.
 
-(Intenta usar v en la última sentencia return.)
 
-### If y else
+### Identificadores exportados
 ```go
 package main
 
@@ -132,53 +57,263 @@ import (
     "math"
 )
 
-func pow(x, n, lim float64) float64 {
-    if v := math.Pow(x, n); v < lim {
-        return v
-    } else {
-        fmt.Printf("%g >= %g\n", v, lim)
-    }
-    // No se puede usar v aquí
-    return lim
+func main() {
+    fmt.Println(math.pi)
+}
+```
+Tras importar un paquete, puedes hacer referencia a los identificadores que exporta.
+
+En Go, un identificador es exportado si empieza por una mayúscula.
+
+Foo es un identificador exportado, al igual que FOO. El identificador foo no es exportado.
+
+Ejecuta el código. Después sustituye math.pi por math.Pi e intentalo de nuevo.
+
+
+### Funciones
+```go
+package main
+
+import "fmt"
+
+func add(x int, y int) int {
+    return x + y
 }
 
 func main() {
-    fmt.Println(
-        pow(3, 2, 10),
-        pow(3, 3, 20),
-    )
+    fmt.Println(add(42, 13))
 }
 
 ```
-Las variables declaradas dentro de la instrucción de inicialización de un if son también visibles dentro de los bloques else.
+Una función puede tener cero o más argumentos.
 
-### Ejercicio: Bucles y Funciones
+En este ejemplo, add posee dos parámetros de tipo int.
+
+Observa que el tipo de indica después del nombre de la variable.
+
+(Para más información acerca de por qué los tipos se miestran así, échale un vistazo a ésta entrada en inglés.)
+
+
+### Funciones (continuación)
+```go
+package main
+
+import "fmt"
+
+func add(x, y int) int {
+    return x + y
+}
+
+func main() {
+    fmt.Println(add(42, 13))
+}
+
+```
+Cuando dos o más parámetros consecutivos de la función son del mismo tipo, puedes omitir el tipo de todos menos del último.
+
+En el ejemplo, acortamos
+```
+x int, y int
+```
+a
+```
+x, y int
+```
+
+
+
+### Múltiples resultados
+```go
+package main
+
+import "fmt"
+
+func swap(x, y string) (string, string) {
+    return y, x
+}
+
+func main() {
+    a, b := swap("hola", "mundo")
+    fmt.Println(a, b)
+}
+
+```
+Una función puede devolver varios resultados.
+
+Esta función devuelve dos cadenas.
+
+### Resultados nombrados
+```go
+package main
+
+import "fmt"
+
+func split(sum int) (x, y int) {
+    x = sum * 4 / 9
+    y = sum - x
+    return
+}
+
+func main() {
+    fmt.Println(split(17))
+}
+
+```
+Las funciones tienen parametros; en Go los resultados pueden ser nombrados y actuar como variables; se les denomina "variables de retorno"
+
+Si las variables de retorno tienen un nombre, una sentencia return sin argumentos devuelve el valor actual de dichas variables.
+
+### Variables
+```go
+package main
+
+import "fmt"
+
+var x, y, z int
+var c, python, java bool
+
+func main() {
+    fmt.Println(x, y, z, c, python, java)
+}
+```
+La sentencia var declara una lista de variables; como en la lista de argumentos de las funciones, el tipo se indica al final.
+
+### Variables inicializadas
+```go
+package main
+
+import "fmt"
+
+var x, y, z int = 1, 2, 3
+var c, python, java = true, false, "¡no!"
+
+func main() {
+    fmt.Println(x, y, z, c, python, java)
+}
+
+```
+La declaracion de variables permite inicializaciones, una por variable.
+
+Si se inicializa una variable, el tipo puede omitirse; la variable adoptará el tipo del valor con el que ha sido inicializada.
+
+
+### Declaración implícita de Variables
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var x, y, z int = 1, 2, 3
+    c, python, java := true, false, "¡no!"
+
+    fmt.Println(x, y, z, c, python, java)
+}
+```
+Dentro de una función, puede utilizarse la sentencia de asignación := en lugar de la declaración var.
+
+(Fuera de una función, todas las declaraciones de variables comienzan con la palabra clave var y el operando := no está disponible.)
+
+
+### Tipos básicos
 ```go
 package main
 
 import (
     "fmt"
+    "math/cmplx"
 )
 
-func Sqrt(x float64) float64 {
+var (
+    ToBe   bool       = false
+    MaxInt uint64     = 1<<64 - 1
+    z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
+func main() {
+    const f = "%T(%v)\n"
+    fmt.Printf(f, ToBe, ToBe)
+    fmt.Printf(f, MaxInt, MaxInt)
+    fmt.Printf(f, z, z)
+}
+```
+Los tipos básicos en Go son:
+```
+bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte //alias para uint8
+
+rune // alias para int32
+     // Representa un punto Unicode
+
+float32 float64
+
+complex64 complex128
+```
+
+
+### Constantes
+```go
+package main
+
+import "fmt"
+
+const Pi = 3.14
+
+func main() {
+    const World = "世界"
+    fmt.Println("Hola", World)
+    fmt.Println("Feliz día de", Pi)
+
+    const Truth = true
+    fmt.Println("¿Go mola?", Truth)
+}
+
+```
+Las constantes se declaran como las variables, pero con la palabra reservada const.
+
+Las constantes pueden ser cadenas, booleanas, o numéricas.
+
+### Constantes Numéricas
+```go
+package main
+
+import "fmt"
+
+const (
+    Big   = 1 << 100
+    Small = Big >> 99
+)
+
+func needInt(x int) int { return x*10 + 1 }
+func needFloat(x float64) float64 {
+    return x * 0.1
 }
 
 func main() {
-    fmt.Println(Sqrt(2))
+    fmt.Println(needInt(Small))
+    fmt.Println(needFloat(Small))
+    fmt.Println(needFloat(Big))
 }
+
 ```
-Una forma sencilla de jugar con funciones y bucles es implementar la funcionalidad de la raíz cuadrada utilizando el método de Newton.
+Las constantes numéricas son valores de alta precisión.
 
-En este caso el método de Newton aproxima Sqrt(x) tomando un punto inicial z y repitiendo:
+Una constante sin un tipo definido tiene el tipo necesitado según el contexto en el que se declara.
 
-[Acá falta una imagen]
+Intenta también imprimir el valor needInt(Big).
 
-Para empezar, simplemente repite el cálculo 10 veces y mira cómo de cerca estás de la solución para distintos valores (1, 2, 3, ...).
+(An int can store at maximum a 64-bit integer, and sometimes less.)
 
-Después cambia la condición del bucle para parar cuando el valor deje de cambiar (o solo cambie con un delta muy pequeño). Mira si esto ocurre con más o menos iteraciones. ¿Cómo estás de cerca comparado con math.Sqrt?
+## Referencias
 
-Pista: para declarar e inicializar un valor decimal dale un valor decimal o utiliza la conversión:
-```
-z := float64(0)
-z := 0.0
-```
+* https://tour.golang.org
+
+___
+
+###### Página: [1] - [Siguiente >>](./lectura-2.md)

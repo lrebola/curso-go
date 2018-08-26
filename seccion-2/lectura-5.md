@@ -1,189 +1,540 @@
-# Métodos e interfaces
+# More types: structs, slices, and maps.
 
-### Métodos
+
+### Estructuras y tipos
 ```go
 package main
 
-import (
-    "fmt"
-    "math"
-)
+import "fmt"
 
 type Vertex struct {
-    X, Y float64
-}
-
-func (v *Vertex) Abs() float64 {
-    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+    X int
+    Y int
 }
 
 func main() {
-    v := &Vertex{3, 4}
-    fmt.Println(v.Abs())
+    fmt.Println(Vertex{1, 2})
 }
+
 ```
-Go no tiene clases. De todas formas, puedes definir métodos para tipos struct.
+Una estructura (struct) es un registro de variables dentro de un mismo tipo.
 
-El receptor del método aparece en su propia lista de argumentos entre la palabra reservada func y el nombre del método.
+(Y una declaración type declara un nuevo tipo de datos.)
 
-
-### Métodos (continuación)
+### Campos de una estructura
 ```go
 package main
 
-import (
-    "fmt"
-    "math"
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    v := Vertex{1, 2}
+    v.X = 4
+    fmt.Println(v.X)
+}
+```
+Los campos de una estructura son accesibles mediante el operador . (punto).
+
+### Punteros
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    p := Vertex{1, 2}
+    q := &p
+    q.X = 1e9
+    fmt.Println(p)
+}
+```
+Go posee punteros, pero no tiene aritmética de punteros (como C).
+
+Los campos de las estructuras pueden accederse a través de un puntero a una estructura.
+
+La indirección del puntero es transparente al programador.
+
+### Estructuras literales
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X, Y int
+}
+
+var (
+    p = Vertex{1, 2}  // Tiene tipo Vertex
+    q = &Vertex{1, 2} // Tiene tipo *Vertex
+    r = Vertex{X: 1}  // Y:0 es implicito
+    s = Vertex{}      // X:0 e Y:0
 )
 
-type MyFloat float64
+func main() {
+    fmt.Println(p, q, r, s)
+}
 
-func (f MyFloat) Abs() float64 {
-    if f < 0 {
-        return float64(-f)
+```
+Una estructura literal denota una nueva instancia de la estructura que muestra los valores de sus campos.
+
+Puedes mostrar sólo un subconjunto de los campos utilizando la sintaxis Name:. (Y el orden de los campos nombrados es irrelevante.)
+
+El prefijo especial & construye un puntero al espacio donde la nueva estructura se aloja.
+
+
+
+### La función `new`
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X, Y int
+}
+
+func main() {
+    v := new(Vertex)
+    fmt.Println(v)
+    v.X, v.Y = 11, 9
+    fmt.Println(v)
+}
+```
+La expresión new(T) aloja en memoria un valor T inicializado a 0 y retorna un puntero al mismo.
+```
+var t *T = new(T)
+```
+o
+```
+t := new(T)
+```
+### Slices
+```go
+package main
+
+import "fmt"
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println("p ==", p)
+
+    for i := 0; i < len(p); i++ {
+        fmt.Printf("p[%d] == %d\n",
+            i, p[i])
     }
-    return float64(f)
 }
 
-func main() {
-    f := MyFloat(-math.Sqrt2)
-    fmt.Println(f.Abs())
-}
 ```
-De hecho, puedes definir un método para cualquier tipo que definas en tu paquete, no sólamente para estructuras.
+Un slice apunta a un array de valores y posee un tamaño.
 
-No puedes definir un método de un tipo de otro paquete o de un tipo básico.
+[]T es un slice con elementos de tipo T.
 
-### Métodos con punteros a receptores
+### Slicing slices
 ```go
 package main
 
-import (
-    "fmt"
-    "math"
-)
-
-type Vertex struct {
-    X, Y float64
-}
-
-func (v *Vertex) Scale(f float64) {
-    v.X = v.X * f
-    v.Y = v.Y * f
-}
-
-func (v *Vertex) Abs() float64 {
-    return math.Sqrt(v.X*v.X + v.Y*v.Y)
-}
+import "fmt"
 
 func main() {
-    v := &Vertex{3, 4}
-    v.Scale(5)
-    fmt.Println(v, v.Abs())
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println("p ==", p)
+    fmt.Println("p[1:4] ==", p[1:4])
+
+    // Un valor de inicio omitido implica 0
+    fmt.Println("p[:3] ==", p[:3])
+
+    // Un valor de fin omitido implica len(s)
+    fmt.Println("p[4:] ==", p[4:])
 }
+
 ```
-Los métodos pueden asociarse con un tipo o un puntero a un tipo declarado.
+Los slices pueden ser reasignados, creando un nuevo slice que apunte al mismo array.
 
-Acabamos de ver dos métodos Abs. Uno para el puntero a un vértice`*Vertex` y otro para el tipo MyFloat.
+La expresión
+```
+s[lo:hi]
+```
+es evaluada como un slice de elementos desde el elemento de índice lo hasta el elemento hi-1 inclusive. Por tanto
+```
+s[lo:lo]
+```
+es un slice vacío y
+```
+s[lo:lo+1]
+```
+tiene un elemento.
 
-Hay dos razones para usar un receptor de tipo puntero. Primero, para evitar copiar el valor en cada llamada al método (más eficiente si el tipo usado es una estructura grande). Segundo, de tal forma que el método pueda modificar el valor a la que apunta el receptor.
-
-Intenta cambiar las declaraciones de los métodos Abs y Scale para usar Vertex como el receptor, en lugar de *Vertex.
-
-El método Scale no tiene efecto cuando v es un vértice`Vertex`. Scale cambia v. Cuando`v` es un tipo (no un puntero) el método ve una copia del vértice Vertex y no puede mutar el valor original.
-
-Abs funciona de cualquier forma. Sólo lee v. No importa si está leyendo el valor original (a través del puntero) o una copia del valor.
-
-### Interfaces
+### Creando slices
 ```go
 package main
 
-import (
-    "fmt"
-    "math"
-)
-
-type Abser interface {
-    Abs() float64
-}
+import "fmt"
 
 func main() {
-    var a Abser
-    f := MyFloat(-math.Sqrt2)
-    v := Vertex{3, 4}
-
-    a = f  // a MyFloat implementa Abser
-    a = &v // a *Vertex implementa Abser
-    a = v  // a Vertex, NO implementa Abser
-
-    fmt.Println(a.Abs())
+    a := make([]int, 5)
+    printSlice("a", a)
+    b := make([]int, 0, 5)
+    printSlice("b", b)
+    c := b[:2]
+    printSlice("c", c)
+    d := c[2:5]
+    printSlice("d", d)
 }
 
-type MyFloat float64
+func printSlice(s string, x []int) {
+    fmt.Printf("%s len=%d cap=%d %v\n",
+        s, len(x), cap(x), x)
+}
+```
+Los slices son creados con la función make. Funciona alojando un array inicializado a 0 y retornando un slice que apunta a ese array:
+```
+a := make([]int, 5)  // len(a)=5
+```
+Los slices tienen un tamaño y una capacidad. La capacidad de un slice es el tamaño máximo que el slice puede crecer dentro del array al que apunta.
 
-func (f MyFloat) Abs() float64 {
-    if f < 0 {
-        return float64(-f)
+Para especificar una capacidad basta con pasar un tercer argumento a make:
+```
+b := make([]int, 0, 5)
+// len(b)=0, cap(b)=5
+```
+Los slices pueden crecer reasignándose (por encima de su capacidad):
+```
+b = b[:cap(b)] // len(b)=5, cap(b)=5
+b = b[1:]      // len(b)=4, cap(b)=4
+```
+
+### Slices nil
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var z []int
+    fmt.Println(z, len(z), cap(z))
+    if z == nil {
+        fmt.Println("¡nulo!")
     }
-    return float64(f)
 }
 
-type Vertex struct {
-    X, Y float64
+```
+El valor por defecto de un slice es nil.
+
+Un slice nil tiene un tamaño y una longitud de 0.
+
+(Para más detalle por favor mira el artículo (en inglés) "Go Slices: usage and internals".) http://golang.org/doc/articles/slices_usage_and_internals.html
+
+### Range
+```go
+package main
+
+import "fmt"
+
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+    for i, v := range pow {
+        fmt.Printf("2**%d = %d\n", i, v)
+    }
 }
 
-func (v *Vertex) Abs() float64 {
-    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+```
+La forma range de un bucle for itera sobre elementos de un slice o un map.
+
+### Range (continuación)
+```go
+package main
+
+import "fmt"
+
+func main() {
+    pow := make([]int, 10)
+    for i := range pow {
+        pow[i] = 1 << uint(i)
+    }
+    for _, value := range pow {
+        fmt.Printf("%d\n", value)
+    }
 }
 ```
-Una interfaz es un tipo de datos definido como un conjunto de métodos.
+Puedes obviar la clave o el valor asignándoselo a _.
 
-Un tipo interface puede contener cualquier tipo que implemente esos métodos.
+Si sólo quieres el índice, descarta el , value integramente.
 
-### Las interfaces se implementan implícitamente
+
+### Ejercicio: Slices
+```go
+package main
+
+import "code.google.com/p/go-tour/pic"
+
+func Pic(dx, dy int) [][]uint8 {
+}
+
+func main() {
+    pic.Show(Pic)
+}
+```
+Implementa la función Pic. Debería devolver un slice de tamaño dy, siendo cada uno de los elementos un slice de dx enteros sin signo de 8 bits. Cuando ejecutes el programa, mostrará tu dibujo, interpretando los números enteros como una escala de grises (bueno, escala de azules).
+
+La elección de la imagen es de tu elección. Algunas funciones interesantes pueden ser x^y, (x+y)/2, y x*y.
+
+(Necesitas usar un bucle para reservar memoria para cada []uint8 dentro de la matriz [][]uint8.)
+
+(Usa uint8(intValue) para covertir entre tipos.)
+
+
+### Maps
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m map[string]Vertex
+
+func main() {
+    m = make(map[string]Vertex)
+    m["Bell Labs"] = Vertex{
+        40.68433, -74.39967,
+    }
+    fmt.Println(m["Bell Labs"])
+}
+```
+Un map relaciona claves y valores.
+
+Los Maps deben crearse con la función make (nunca con new) antes de su uso; el map nil está vacío y no puede ser asignado.
+
+
+
+### Map literales
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m = map[string]Vertex{
+    "Bell Labs": Vertex{
+        40.68433, -74.39967,
+    },
+    "Google": Vertex{
+        37.42202, -122.08408,
+    },
+}
+
+func main() {
+    fmt.Println(m)
+}
+```
+Los map literales son como las estructuras literales, pero las claves son obligatorias.
+
+
+
+### Map literales (continuación)
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m = map[string]Vertex{
+    "Bell Labs": {40.68433, -74.39967},
+    "Google":    {37.42202, -122.08408},
+}
+
+func main() {
+    fmt.Println(m)
+}
+```
+Si el tipo superior es un nombre de un tipo, puedes omitirlo de los elementos del literal.
+
+
+
+### Operaciones con maps
+```go
+package main
+
+import "fmt"
+
+func main() {
+    m := make(map[string]int)
+
+    m["Respuesta"] = 42
+    fmt.Println("Valor:", m["Respuesta"])
+
+    m["Respuesta"] = 48
+    fmt.Println("Valor:", m["Respuesta"])
+
+    delete(m, "Respuesta")
+    fmt.Println("Valor:", m["Respuesta"])
+
+    v, ok := m["Respuesta"]
+    fmt.Println("Valor:", v, "¿Existe?", ok)
+}
+```
+Insertar o actualizar un elemento de un map m:
+```
+m[clave] = elem
+```
+Recuperar un elemento:
+```
+elem = m[clave]
+```
+Borrar un elemento:
+```
+delete(m, clave)
+```
+Comprobar si una clave está presente con una doble assignación:
+```
+elem, ok = m[clave]
+```
+Si clave existe en m, ok es true. De otro modo ok és false y elem tiene el valor inicial del tipo de los elementos del map.
+
+De manera similar, cuando leemos de un map, si la clave no está el resultado es el valor inicial del tipo de los elementos del map.
+
+### Ejercicio: Maps
+```go
+package main
+
+import (
+    "code.google.com/p/go-tour/wc"
+)
+
+func ContadorPalabras(s string) map[string]int {
+    return map[string]int{"x": 1}
+}
+
+func main() {
+    wc.Test(ContadorPalabras)
+}
+```
+Implementa ContadorPalabras. Debería devolver un map con el número de veces que una "palabra" aparece en la cadena s. La función wc.Test ejecuta un caso de prueba ejecutando la función implementada e imprime éxito o fallo.
+
+Puedes encontrar ayuda en strings.Fields. http://golang.org/pkg/strings/#Fields
+
+
+### Funciones son valores
 ```go
 package main
 
 import (
     "fmt"
-    "os"
+    "math"
 )
 
-type Reader interface {
-    Read(b []byte) (n int, err error)
-}
+func main() {
+    hypot := func(x, y float64) float64 {
+        return math.Sqrt(x*x + y*y)
+    }
 
-type Writer interface {
-    Write(b []byte) (n int, err error)
+    fmt.Println(hypot(3, 4))
 }
+```
+Las funciones también son valores.
 
-type ReadWriter interface {
-    Reader
-    Writer
+
+### Funciones son clausuras
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+    sum := 0
+    return func(x int) int {
+        sum += x
+        return sum
+    }
 }
 
 func main() {
-    var w Writer
+    pos, neg := adder(), adder()
+    for i := 0; i < 10; i++ {
+        fmt.Println(
+            pos(i),
+            neg(-2*i),
+        )
+    }
+}
+```
+Y las funciones son clausuras completas.
 
-    // os.Stdout implementa Writer
-    w = os.Stdout
+La función adder retorna una clausura (o función anónima). Cada clausura está vinculada a su variable sum correspondiente.
 
-    fmt.Fprintf(w, "hola, writer\n")
+
+
+### Ejercicio: La clausura de Fibonacci
+```go
+package main
+
+import "fmt"
+
+// fibonacci es una función que devuelve
+// una función que devuelve un int.
+func fibonacci() func() int {
 }
 
-
+func main() {
+    f := fibonacci()
+    for i := 0; i < 10; i++ {
+        fmt.Println(f())
+    }
+}
 ```
-Un tipo implementa una interfaz simplemente implementando los métodos.
+Vamos a divertirnos un poco con las funciones.
 
-No hay declaración explícita.
+Implementa una función de fibonacci que devuelva una función (o clausura) que devuelva los sucesivos números de fibonacci.
 
-Las interfaces implícitas desacoplan la implementación de paquetes entre los paquetes que definen las interfaces: ninguno depende de otro.
 
-También favorece la definición de interfaces precisas, porque no tienes que encontrar todas las implementaciones y etiquetarlas con el nuevo nombre de la interfaz.
+### Switch
+```go
+package main
 
-El paquete io http://golang.org/pkg/io/ define Reader y Writer; Tú no tienes que hacerlo.
+import (
+    "fmt"
+    "runtime"
+)
 
-### Errores
+func main() {
+    fmt.Print("Go runs on ")
+    switch os := runtime.GOOS; os {
+    case "darwin":
+        fmt.Println("OS X.")
+    case "linux":
+        fmt.Println("Linux.")
+    default:
+        // freebsd, openbsd,
+        // plan9, windows...
+        fmt.Printf("%s.", os)
+    }
+}
+```
+Probablemente ya sabes cómo iba a ser la cláusula switch.
+
+El cuerpo de un caso sale automáticamente de la cláusula switch, a menos que termine con una sentencia fallthrough, que provocaría que siguiera ejecutando el siguiente caso contemplado.
+
+### Orden de evaluación de un switch
 ```go
 package main
 
@@ -192,225 +543,94 @@ import (
     "time"
 )
 
-type MyError struct {
-    When time.Time
-    What string
-}
-
-func (e *MyError) Error() string {
-    return fmt.Sprintf("A las %v, %s",
-        e.When, e.What)
-}
-
-func run() error {
-    return &MyError{
-        time.Now(),
-        "ha fallado",
-    }
-}
-
 func main() {
-    if err := run(); err != nil {
-        fmt.Println(err)
+    fmt.Println("¿Cuándo es Sábado?")
+    today := time.Now().Weekday()
+    switch time.Saturday {
+    case today + 0:
+        fmt.Println("Hoy.")
+    case today + 1:
+        fmt.Println("Mañana.")
+    case today + 2:
+        fmt.Println("Pasado mañana.")
+    default:
+        fmt.Println("Demasiado tarde.")
     }
 }
 ```
-Un error es cualquier cosa que se defina así mismo como una cadena de error. La idea está en la interfaz predefinida error, con su único método, Error, que devuelve una cadena de caracteres:
+Los casos de un Switch evaluan los casos de arriba a abajo, parando cuando se encuentra un caso satisfactorio.
+
+(Por ejemplo,
 ```
-type error interface {
-    Error() string
+switch i {
+case 0:
+case f():
 }
 ```
-Las funciones de impresión del paquete fmt sabe cómo llamar al método cuando se le pide imprimir un error.
+no ejecuta f si i==0.)
 
-### Ejercicio: Errores
+Nota: El temps a Go playground sempre comença el dimarts 2009-11-10 23:00:00 UTC, un valor amb significat es deixa com a exercici per al lector.
+
+### Switch sin condición
 ```go
 package main
 
 import (
     "fmt"
+    "time"
 )
 
-func Sqrt(f float64) (float64, error) {
-    return 0, nil
-}
-
 func main() {
-    fmt.Println(Sqrt(2))
-    fmt.Println(Sqrt(-2))
+    t := time.Now()
+    switch {
+    case t.Hour() < 12:
+        fmt.Println("¡Buenos días!")
+    case t.Hour() < 17:
+        fmt.Println("Buenas tardes.")
+    default:
+        fmt.Println("Buenas noches.")
+    }
 }
 ```
-Copia tu función Sqrt de ejercicios anteriores y modifícala para que devuelva un valor de tipo error.
+Un switch sin condición es lo mismo que switch true.
 
-Sqrt debe devolver un error no nulo cuando se le pasa un número negativo, dado que no soporta números complejos.
-
-Crea un nuevo tipo
-```
-type ErrNegativeSqrt float64
-```
-y hazlo del tipo error implementando un método
-```
-func (e ErrNegativeSqrt) Error() string
-```
-de forma que ErrNegativeSqrt(-2).String() devuelva "no se puede calcular la raíz de un número negativo: -2".
-
-Nota: una llamada a fmt.Sprint(e) dentro del método Error hará que el programa entre en un bucle infinito. Puedes evitarlo convirtiendo e: fmt.Sprint(float64(e)). ¿Por qué?
-
-Cambia tu función Sqrt para devolver un valor ErrNegativeSqrt cuando se le pase un número negativo.
+Esta construcción puede ser una manera clara de escribir cadenas largas if-then-else.
 
 
-
-### Servidores Web
+### Ejercicio avanzado: Raices cúbicas complejas
 ```go
 package main
 
-import (
-    "fmt"
-    "net/http"
-)
+import "fmt"
 
-type Hello struct{}
-
-func (h Hello) ServeHTTP(
-    w http.ResponseWriter,
-    r *http.Request) {
-    fmt.Fprint(w, "¡Hola!")
+func Cbrt(x complex128) complex128 {
 }
 
 func main() {
-    var h Hello
-    http.ListenAndServe("localhost:4000", h)
+    fmt.Println(Cbrt(2))
 }
 ```
-El paquete http http://golang.org/pkg/http/ sirve peticiones HTTP usando cualquier valor que implemente http.Handler:
-```
-package http
+Veamos cuál es el soporte de Go para números complejos mediante los tipos complex64 y complex128. Para raíces cuadradas el método de Newton se basa en repeticiones:
 
-type Handler interface {
-ServeHTTP(
-    w ResponseWriter, r *Request)
-}
-```
-n este ejemplo, el tipo Hello implementa http.Handler.
+TODO: Falta IMAGEN
 
-Visita http://localhost:4000/ para ver la bienvenida.
+Busca la raíz cúbica de 2, para asegurarte que el algoritmo funciona. Existe una función Pow http://golang.org/pkg/cmath/#Pow en el paquete math/cmplx.
 
-Nota: Este ejemplo sólo se puede ejecutar a través del tour web local. Para intentar implementar servidores web puedes Instalar Go.
-
-
-### Ejercicio: Manejadores HTTP
+### Ejercicio avanzado: Raices cúbicas complejas
 ```go
 package main
 
-import (
-    "net/http"
-)
+import "fmt"
 
-func main() {
-    // Tu http.Handle llama aquí
-    http.ListenAndServe("localhost:4000", nil)
-}
-```
-Implementa los siguientes tipos y define métodos ServeHTTP para ellos. Asígnalos distintas rutas de tu servidor web.
-```
-type String string
-
-type Struct struct {
-    Greeting string
-    Punct    string
-    Who      string
-}
-```
-Por ejemplo, deberías poder asignárselas usando:
-```
-http.Handle("/string", String("I'm a frayed knot."))
-http.Handle("/struct", &Struct{"Hola", ":", "Gophers!"})
-```
-
-### Imágenes
-```go
-package main
-
-import (
-    "fmt"
-    "image"
-)
-
-func main() {
-    m := image.NewRGBA(image.Rect(0, 0, 100, 100))
-    fmt.Println(m.Bounds())
-    fmt.Println(m.At(0, 0).RGBA())
-}
-```
-El paquete image http://golang.org/pkg/image/#Image define la interfaz Image:
-
-
-```
-package image
-
-type Image interface {
-    ColorModel() color.Model
-    Bounds() Rectangle
-    At(x, y int) color.Color
-}
-```
-(Mira la documentación http://golang.org/pkg/image/#Image para más detalles.)
-
-color.Color y color.Model también son interfaces, pero las ignoraremos usando las implementaciones predefinidas image.RGBA y image.RGBAModel.
-
-
-### Ejercicio: Imágenes
-```go
-package main
-
-import (
-    "code.google.com/p/go-tour/pic"
-    "image"
-)
-
-type Image struct{}
-
-func main() {
-    m := Image{}
-    pic.ShowImage(m)
-}
-```
-¿Recuerdas el generador de imágenes que escribiste antes? Vamos a escribir otro, pero esta vez devolverá una implementación de image.Image en lugar de un slice.
-
-Define tu propio tipo Image, implementa los métodos necesarios http://golang.org/pkg/image/#Image, y llama a pic.ShowImage.
-
-Bounds deberían devolver un image.Rectangle, como `image.Rect(0, 0, w, h)`.
-
-ColorModel debería devolver color.RGBAModel.
-
-At debería devolver un color; el valor v del último generador corresponde a `color.RGBA{v, v, 255, 255}`.
-
-### Ejercicio: Lector Rot13
-```go
-package main
-
-import (
-    "io"
-    "os"
-    "strings"
-)
-
-type rot13Reader struct {
-    r io.Reader
+func Cbrt(x complex128) complex128 {
 }
 
 func main() {
-    s := strings.NewReader(
-        "¡Unf qrfpvsenqb ry póqvtb!")
-        //"Lbh penpxrq gur pbqr!")
-    r := rot13Reader{s}
-    io.Copy(os.Stdout, &r)
+    fmt.Println(Cbrt(2))
 }
 ```
-Un patrón común es un io.Reader http://golang.org/pkg/io/#Reader que encapsula otro io.Reader, modificando el flujo de datos de alguna forma.
+Veamos cuál es el soporte de Go para números complejos mediante los tipos complex64 y complex128. Para raíces cuadradas el método de Newton se basa en repeticiones:
 
-Por ejemplo, la función gzip.NewReader http://golang.org/pkg/compress/gzip/#Decompressor.NewReader recibe un io.Reader (un flujo de datos en formato gzip) y devuelve un *gzip.Decompressor que también implementa io.Reader (un flujo de datos descomprimidos).
+TODO: falta imagen
 
-Implementa un rot13Reader que implemente io.Reader y lea de un io.Reader, modificando el flujo de datos aplicándole el algoritmo de cifrado ROT13 http://es.wikipedia.org/wiki/ROT13 a todos los caracteres alfabéticos.
-
-El tipo rot13Reader está completo. Implementa su método Read para que implemente la interfaz io.Reader.
+Busca la raíz cúbica de 2, para asegurarte que el algoritmo funciona. Existe una función Pow en el paquete math/cmplx.

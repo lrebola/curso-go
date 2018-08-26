@@ -1,319 +1,135 @@
-# Parte I
 
-Conceptos básicos
+## Instalando Go
 
-## Paquetes, variables, y funciones
+Para la instalación de *Go* descargaremos desde su [página](https://golang.org/dl/) el instalador correspondiente al Sistema Operativo que vayamos a usar.
 
-### Paquetes
+Este binario de *Go* nos permite compilar, descargar e instalar paquetes y ejecutar otros comandos útiles.
+
+##### Variables de entorno
+
+Luego de la instalación debemos tener en cuenta las siguientes dos variables de entorno.
+
+##### `GOROOT`
+El instalador binario de *Go* comunmente se instala en:
+
+| OS | PATH |
+| ------ | ------ |
+| Linux y Mac OS | /usr/local/go |
+| Windows | C:\Go |
+
+Y este path queda definido en la variable de entorno `GOROOT`.
+
+GOROOT siempre se escanea antes de GOPATH.
+
+##### `GOPATH`
+
+* Este path es usado para resolver importaciones de paquetes.
+* Enumera lugares para buscar el código.
+* Especifica la ubicación del workspace.
+* Este path no puede coincidir con el directorio de instalación.
+
+Se pueden comprobar ambas varibles con el comando `go env`. Ejemplo:
+
+```sh
+$ go env
+...
+GOPATH="/Users/leonardorebola/go"
+GOROOT="/usr/local/go"
+...
+# Entre otras variables que se listaran.
+```
+
+## Comprobar la instalación
+
+Verificarmos invocando al comando *go* para imprimir su versión:
+```sh
+$ go version
+```
+## Ejecutar código
+
+Crearemos el fichero `hola-mundo.go`:
+
 ```go
 package main
 
-import (
-    "fmt"
-    "math"
-)
-
 func main() {
-    fmt.Println("Feliz día", math.Pi)
+	println("¡Hola Mundo!")
 }
 ```
-- Todo programa en Go contiene paquetes.
-- Los programas comienzan su ejecución en el paquete **main**.
-- *En Go, el punto de entrada de un programa es una función llamada main ubicada en el paquete main.*
-- Este programa usa los paquetes con rutas de importación "fmt" y "math".
 
-Por convención, el nombre del paquete es el mismo que el último elemento de la ruta de importación.
+Compilamos y ejecutamos con:
 
-
-### Importación
-```go
-package main
-
-import (
-    "fmt"
-    "math"
-)
-
-func main() {
-    fmt.Printf("Ahora tienes %g problemas.",
-        math.Nextafter(2, 3))
-}
-```
-Éste código agrupa las importaciones entre paréntesis de forma "factorizada". Tambien puedes realizar multiples importaciones de la siguiente forma:
-
-```
-import "fmt"
-import "math"
-```
-pero es común usar la forma factorizada para eliminar código innecesario.
-
-
-### Identificadores exportados
-```go
-package main
-
-import (
-    "fmt"
-    "math"
-)
-
-func main() {
-    fmt.Println(math.pi)
-}
-```
-Tras importar un paquete, puedes hacer referencia a los identificadores que exporta.
-
-En Go, un identificador es exportado si empieza por una mayúscula.
-
-Foo es un identificador exportado, al igual que FOO. El identificador foo no es exportado.
-
-Ejecuta el código. Después sustituye math.pi por math.Pi e intentalo de nuevo.
-
-
-### Funciones
-```go
-package main
-
-import "fmt"
-
-func add(x int, y int) int {
-    return x + y
-}
-
-func main() {
-    fmt.Println(add(42, 13))
-}
-
-```
-Una función puede tener cero o más argumentos.
-
-En este ejemplo, add posee dos parámetros de tipo int.
-
-Observa que el tipo de indica después del nombre de la variable.
-
-(Para más información acerca de por qué los tipos se miestran así, échale un vistazo a ésta entrada en inglés.)
-
-
-### Funciones (continuación)
-```go
-package main
-
-import "fmt"
-
-func add(x, y int) int {
-    return x + y
-}
-
-func main() {
-    fmt.Println(add(42, 13))
-}
-
-```
-Cuando dos o más parámetros consecutivos de la función son del mismo tipo, puedes omitir el tipo de todos menos del último.
-
-En el ejemplo, acortamos
-```
-x int, y int
-```
-a
-```
-x, y int
+```sh
+$ go run hola-mundo.go
 ```
 
+En este caso `println(string)` es una función predefinida, no requiere referenciar ningún paquete.
 
+El código siempre debe estar dentro del **workspace** *(definido por GOPATH)*, salvo no utilices las librerías estándar de *Go* ni otras librerías de terceros como en el ejemplo anterior.
 
-### Múltiples resultados
-```go
-package main
+- `go run` compila y ejecuta el código.
+- `go build` compila y genera un ejecutable binario.
 
-import "fmt"
+## Go Tool
 
-func swap(x, y string) (string, string) {
-    return y, x
-}
+Comandos de Go provistos por la *Go Tool*.
 
-func main() {
-    a, b := swap("hola", "mundo")
-    fmt.Println(a, b)
-}
-
-```
-Una función puede devolver varios resultados.
-
-Esta función devuelve dos cadenas.
-
-### Resultados nombrados
-```go
-package main
-
-import "fmt"
-
-func split(sum int) (x, y int) {
-    x = sum * 4 / 9
-    y = sum - x
-    return
-}
-
-func main() {
-    fmt.Println(split(17))
-}
-
-```
-Las funciones tienen parametros; en Go los resultados pueden ser nombrados y actuar como variables; se les denomina "variables de retorno"
-
-Si las variables de retorno tienen un nombre, una sentencia return sin argumentos devuelve el valor actual de dichas variables.
-
-### Variables
-```go
-package main
-
-import "fmt"
-
-var x, y, z int
-var c, python, java bool
-
-func main() {
-    fmt.Println(x, y, z, c, python, java)
-}
-```
-La sentencia var declara una lista de variables; como en la lista de argumentos de las funciones, el tipo se indica al final.
-
-### Variables inicializadas
-```go
-package main
-
-import "fmt"
-
-var x, y, z int = 1, 2, 3
-var c, python, java = true, false, "¡no!"
-
-func main() {
-    fmt.Println(x, y, z, c, python, java)
-}
-
-```
-La declaracion de variables permite inicializaciones, una por variable.
-
-Si se inicializa una variable, el tipo puede omitirse; la variable adoptará el tipo del valor con el que ha sido inicializada.
-
-
-### Declaración implícita de Variables
-```go
-package main
-
-import "fmt"
-
-func main() {
-    var x, y, z int = 1, 2, 3
-    c, python, java := true, false, "¡no!"
-
-    fmt.Println(x, y, z, c, python, java)
-}
-```
-Dentro de una función, puede utilizarse la sentencia de asignación := en lugar de la declaración var.
-
-(Fuera de una función, todas las declaraciones de variables comienzan con la palabra clave var y el operando := no está disponible.)
-
-
-### Tipos básicos
-```go
-package main
-
-import (
-    "fmt"
-    "math/cmplx"
-)
-
-var (
-    ToBe   bool       = false
-    MaxInt uint64     = 1<<64 - 1
-    z      complex128 = cmplx.Sqrt(-5 + 12i)
-)
-
-func main() {
-    const f = "%T(%v)\n"
-    fmt.Printf(f, ToBe, ToBe)
-    fmt.Printf(f, MaxInt, MaxInt)
-    fmt.Printf(f, z, z)
-}
-```
-Los tipos básicos en Go son:
-```
-bool
-
-string
-
-int  int8  int16  int32  int64
-uint uint8 uint16 uint32 uint64 uintptr
-
-byte //alias para uint8
-
-rune // alias para int32
-     // Representa un punto Unicode
-
-float32 float64
-
-complex64 complex128
+```sh
+$ go command [arguments]
 ```
 
+### Comandos
+| Comando | Descripción |
+| ----- | ----- |
+| `build` | Compilar paquetes y dependencias. |
+| `clean` | Elimina archivos de la cache. |
+| `doc` | Muestra la documentación de un paquete o símbolo. |
+| `env` | Imprime las variables de entorno de *Go*. |
+| `bug` | Iniciar un informe de error |
+| `fix` | Actualiza paquetes. |
+| `fmt` | *gofmt* formatea el código fuente. |
+| `generate` | Generar archivos Go por fuente de procesamiento |
+| `get` | Descargar e instalar paquetes y dependencias. |
+| `install` | Compilar e instalar paquetes y dependencias. |
+| `list` | Lista de paquetes. |
+| `run` | Compilar y ejecutar el programa Go. |
+| `test` | |
+| `tool` |  |
+| `version` | Imprimir la versión Go. |
+| `vet` | Reportar posibles errores en los paquetes. |
+| `help` | "go help [command]" para más información sobre un comando. |
 
-### Constantes
-```go
-package main
 
-import "fmt"
+### Ejemplos:
 
-const Pi = 3.14
-
-func main() {
-    const World = "世界"
-    fmt.Println("Hola", World)
-    fmt.Println("Feliz día de", Pi)
-
-    const Truth = true
-    fmt.Println("¿Go mola?", Truth)
-}
-
+```sh
+$
 ```
-Las constantes se declaran como las variables, pero con la palabra reservada const.
 
-Las constantes pueden ser cadenas, booleanas, o numéricas.
-
-### Constantes Numéricas
-```go
-package main
-
-import "fmt"
-
-const (
-    Big   = 1 << 100
-    Small = Big >> 99
-)
-
-func needInt(x int) int { return x*10 + 1 }
-func needFloat(x float64) float64 {
-    return x * 0.1
-}
-
-func main() {
-    fmt.Println(needInt(Small))
-    fmt.Println(needFloat(Small))
-    fmt.Println(needFloat(Big))
-}
-
+```sh
+$
 ```
-Las constantes numéricas son valores de alta precisión.
 
-Una constante sin un tipo definido tiene el tipo necesitado según el contexto en el que se declara.
+```sh
+$
+```
+## Editores y plugins
 
-Intenta también imprimir el valor needInt(Big).
+Tenemos una amplia variedad de opciones para desarrollar en *Go* que podremos ver  [acá](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) y seguramente elegir nuestro editor favorito.
 
-(An int can store at maximum a 64-bit integer, and sometimes less.)
+Algunas opciones recomendables son:
+
+| IDE | Plugin |
+| ------ | ------ |
+| [Atom](http://atom.io) | [go-plus](https://github.com/joefitzgerald/go-plus) |
+| [Sublime Text](https://www.sublimetext.com/3) | [Golang Build](https://github.com/golang/sublime-build) |
+| [Visual Studio Code](https://code.visualstudio.com) | [Go Language Support](https://visualstudiogallery.msdn.microsoft.com/bd7675ba-1bf5-4395-8c5a-4fc19dfc0d76) |
 
 ## Referencias
 
-* https://tour.golang.org
+* https://golang.org/doc/install
+* https://golang.org/cmd/go/
 
 ___
 
-###### Página: [1] - [Siguiente >>](./lectura-2.md)
+###### Página: [1](./lectura-1.md), [2](./lectura-2.md), [3](./lectura-3.md), [4]
