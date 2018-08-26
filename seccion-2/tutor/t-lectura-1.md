@@ -1,5 +1,7 @@
 ## Características de Go
 
+Nos toca primero revisar esta parte meramente teórica:
+
 **Open Source**
 Sus creadores explican que la decisión de Google para que Go sea de código abierto, se debe a que esa es la única forma en que puede tener éxito.
 
