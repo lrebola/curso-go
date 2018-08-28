@@ -10,7 +10,7 @@ Este binario de *Go* nos permite compilar, descargar e instalar paquetes y ejecu
 Luego de la instalación debemos tener en cuenta las siguientes dos variables de entorno.
 
 ##### `GOROOT`
-El instalador binario de *Go* comunmente se instala en:
+El instalador binario de *Go* comúnmente se instala en:
 
 | OS | PATH |
 | ------ | ------ |
@@ -28,7 +28,7 @@ GOROOT siempre se escanea antes de GOPATH.
 * Especifica la ubicación del workspace.
 * Este path no puede coincidir con el directorio de instalación.
 
-Se pueden comprobar ambas varibles con el comando `go env`. Ejemplo:
+Se pueden comprobar ambas variables con el comando `go env`. Ejemplo:
 
 ```sh
 $ go env
