@@ -2,32 +2,23 @@
 
 Veremos como hacerlo en Windows, Linux y Mac OS. Para que cada uno pueda hacerlo en su Sistema Operativo preferido.
 
-Antes de proceder a descargar el instalador vamos a ver de que se trata la instalación y como la vamos a hacer.
+El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que pronto veremos.
 
-Luego aplicaremos lo aquí visto para realizar la instalación en cada plataforma.
-
----
-
-El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que veremos pronto.
-
-Además Go necesita dos variables de entorno para funcionar.
+Luego de su instalación, debemos configurar dos variables de entorno que necesita Go:
 
 La primera es GOROOT, que indica el directorio donde se encuentra el binario de Go.
 
-Y la segunda es GOPATH, y representa la ubicación de nuestro workspace. Es decir, cual será nuestra carpeta donde escribiremos el código de nuestros proyectos.
+Y la segunda es GOPATH, esta representa la ubicación de nuestro Espacio de Trabajo. Es decir, cual será nuestra carpeta de workspace donde escribiremos el código de nuestros proyectos.
+
+En Go se suele conservar todos los proyectos de código en un único espacio de trabajo. Esto difiere de otros entornos de programación donde cada workspace suele estar asociado a un repositorio de control de versiones. En Go, deberemos tener cada repositorio dentro de un mismo workspace. A menos que optemos por cambiar el path de GOPATH cada vez que queramos trabajar en otro directorio de workspace.
 
 Además GOPATH es usado para resolver las importaciones de paquetes y no puede coincidir con el directorio de instalación.
 
 
-Esto es básicamente lo que debemos tener en cuenta, ahora vamos a hacerlo.
-
-
-Ahora vamos a instalar Go, configurar la variables de entorno y ejecutar un Hola Mundo.
+Esto es básicamente lo que debemos tener en cuenta, ahora vamos a instalar Go, configurar la variables de entorno y ejecutar un Hola Mundo.
 
 ---
-Los programadores Go suelen conservar todos sus códigos Go en un único espacio de trabajo.
 
-Tenga en cuenta que esto difiere de otros entornos de programación en los que cada proyecto tiene un espacio de trabajo separado y los espacios de trabajo están estrechamente vinculados a los repositorios de control de versiones.
 
 
 Workspaces
@@ -43,4 +34,3 @@ src contiene archivos fuente Go, y
 bin contiene comandos ejecutables.
 
 La herramienta ir crea e instala binarios en el directorio bin.
-
