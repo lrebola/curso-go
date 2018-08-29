@@ -1,7 +1,7 @@
 
 ## Instalando Go
 
-Para la instalación de *Go* descargaremos desde su [página](https://golang.org/dl/) el instalador correspondiente al Sistema Operativo que vayamos a usar.
+Para la instalación de *Go* descargaremos desde su página [golang.org/dl](https://golang.org/dl/) el instalador correspondiente a la plataforma de Sistema Operativo que vayamos a usar.
 
 Este binario de *Go* nos permite compilar, descargar e instalar paquetes y ejecutar otros comandos útiles.
 

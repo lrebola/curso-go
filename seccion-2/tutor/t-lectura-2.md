@@ -4,7 +4,7 @@ Veremos como hacerlo en Windows, Linux y Mac OS. Para que cada uno pueda hacerlo
 
 El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que pronto veremos.
 
-Luego de su instalación, debemos configurar dos variables de entorno que necesita Go:
+Luego de su instalación, debemos configurar dos variables de entorno que Go necesita:
 
 La primera es GOROOT, que indica el directorio donde se encuentra el binario de Go.
 
