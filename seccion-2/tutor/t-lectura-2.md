@@ -1,6 +1,4 @@
-¡Llegó la hora de instalar Go!
-
-Veremos como hacerlo en Windows, Linux y Mac OS. Para que cada uno pueda hacerlo en su Sistema Operativo preferido.
+Vamos a ver en que consiste la instalación de Go, para luego hacerlo en Windows, Linux y Mac OS. Para que cada uno pueda hacerlo en su Sistema Operativo preferido.
 
 El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que pronto veremos.
 
@@ -15,7 +13,7 @@ En Go se suele conservar todos los proyectos de código en un único espacio de 
 Además GOPATH es usado para resolver las importaciones de paquetes y no puede coincidir con el directorio de instalación.
 
 
-Esto es básicamente lo que debemos tener en cuenta, ahora vamos a instalar Go, configurar la variables de entorno y ejecutar un Hola Mundo.
+Esto es básicamente lo que debemos tener en cuenta, ahora vamos a instalar Go, configurar las variables de entorno y ejecutar un Hola Mundo.
 
 ---
 
