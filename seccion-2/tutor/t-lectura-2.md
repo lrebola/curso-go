@@ -1,10 +1,16 @@
+- Descargar binario
+
 Vamos a ver en que consiste la instalación de Go, para luego hacerlo en Windows, Linux y Mac OS. Para que cada uno pueda hacerlo en su Sistema Operativo preferido.
 
 El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que pronto veremos.
 
+---
+
+- Configurar variables de entorno
+
 Luego de su instalación, debemos configurar dos variables de entorno que Go necesita:
 
-La primera es GOROOT, que indica el directorio donde se encuentra el binario de Go.
+La primera es GOROOT, que indica el directorio donde se encuentra instalado el binario de Go.
 
 Y la segunda es GOPATH, esta representa la ubicación de nuestro Espacio de Trabajo. Es decir, cual será nuestra carpeta de workspace donde escribiremos el código de nuestros proyectos.
 
@@ -12,6 +18,15 @@ En Go se suele conservar todos los proyectos de código en un único espacio de 
 
 Además GOPATH es usado para resolver las importaciones de paquetes y no puede coincidir con el directorio de instalación.
 
+---
+
+- Comprobar la instalación
+
+La verificáramos ejecutando el comando *go version* para imprimir su versión.
+
+Se pueden comprobar ambas variables con el comando *go env*.
+
+---
 
 Esto es básicamente lo que debemos tener en cuenta, ahora vamos a instalar Go, configurar las variables de entorno y ejecutar un Hola Mundo.
 
@@ -31,4 +46,4 @@ Un espacio de trabajo es una jerarquía de directorios con dos directorios en su
 src contiene archivos fuente Go, y
 bin contiene comandos ejecutables.
 
-La herramienta ir crea e instala binarios en el directorio bin.
+La herramienta go crea e instala binarios en el directorio bin.
