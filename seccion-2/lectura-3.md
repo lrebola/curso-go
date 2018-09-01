@@ -1,9 +1,10 @@
 ## Instalación en Windows
 
-- Descarga e instalación del binario
-- Configurar y comprobar las variables de entorno
-- Comprobar la instalación
-- Ejecutar un "Hola Mundo"
+- Descarga e instalación del binario.
+- Configurar y comprobar las variables de entorno.
+- Comprobar la instalación.
+- Instalar un versionador de código.
+- Ejecutar un "Hola Mundo".
 
 
 #### Descarga e instalación
@@ -14,7 +15,7 @@ Link de descarga: [https://golang.org/dl](https://golang.org/dl/)
 ```sh
 $ go env
 ...
-GOPATH="C:\Go"
+GOPATH="C:\Users\<TU_USUARIO>\Documents\Go"
 GOROOT="C:\Go"
 ...
 # Entre otras variables que se listarán.
@@ -25,7 +26,27 @@ GOROOT="C:\Go"
 ```sh
 $ go version
 ```
-## Ejecutar código
+
+#### Instalar un versionador de código
+
+La obtención de un código fuente se realiza utilizando una de las siguientes herramientas que se espera encontrar en su sistema:
+
+https://github.com/golang/go/wiki/GoGetTools
+
+Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de codigo
+
+Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
+
+`go get`
+
+- Git
+- SVN
+- Mercurial
+- Bazaar
+
+Utilizaremos Git: https://git-scm.com/downloads
+
+#### Ejecutar código
 
 Crearemos el fichero `hola-mundo.go`:
 

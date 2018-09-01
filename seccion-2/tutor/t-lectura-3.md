@@ -35,6 +35,13 @@ Ahora desde el explorador de archivos vamos al directorio donde instalamos Go. S
 
 Aquí vemos que tenemos todos los archivos y carpetas de la instalación de Go.
 
+Antes de pasar a comprobar y configurar las variables de entornos, podemos chequear si Go ya funciona. Abrimos el CMD de Windows y escribimos "go". Como podemos observar ya se reconoce el comando go, esto significa que la variable de entorno GOROOT se configuró correctamente y ademas se agrego el directorio binario de Go al PATH de Windows.
+
+Pero igual deberemos configurar la variable GOPATH, y de paso revisaremos GOROOT por si alguien tuvo problemas.
+
+En caso que GOROOT no haya sido configurada por el instalador, recién cuando ejecutaron el comando go en el CMD de Windows les debería haber mostrado un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
+
+
 ---
 
 #### Configurar y comprobar las variables de entorno
@@ -42,6 +49,11 @@ Aquí vemos que tenemos todos los archivos y carpetas de la instalación de Go.
 El siguiente paso es revisar las variables de entorno, para ello acá en Windows 10 podemos escribir directamente "variables de entorno" y nos aparecerá esta pantalla.
 
 Para otras versiones de Windows, la forma mas estándar de llegar hasta aquí es ir a Equipo, botón derecho en Propiedades, Configuración avanzada del sistema y por ultimo Variables de Entorno.
+
+Algo a tener en cuenta en este punto, es que tenemos dos tipos de variables de entorno en Windows.
+Una global que corresponde al sistema, y otra de usuario. Es decir, las variables globales de sistema serán compartidas entre todos los usuarios del equipo, si tienen mas de un usuario. En cambio las variables de usuario solo la ve ese usuario en particular.
+
+Nosotros vamos a configurar directamente todo en las variables de entorno del sistema.
 
 Podemos observar que efectivamente tenemos GOROOT con el path de instalación. Si no lo tenemos, debemos añadirlo.
 
@@ -55,7 +67,9 @@ Volvamos al explorador de archivos, y veremos que dentro de nuestro usuario se a
 
 Nos interesa la subcarpeta bin, que contendrá los binarios compilados de nuestros proyectos Go.
 
-Bien, ahora copiamos este path y vamos a pegarlo en la variable de entorno PATH y guardamos.
+Bien, ahora copiamos este path y vamos a agregarlo en la variable de entorno PATH.
+
+Para eso ubicamos esta variable “PATH” y damos clic en el botón “Editar”, ahora pegamos el path aquí y guardamos.
 
 Ahora solo nos queda agregar una ultima variable de entorno. La GOPATH.
 Vamos a Nueva, escribimos GOPATH en nombre de variable y luego en Valor de la variable pegamos nuevamente el path que copiamos hace un momento.
@@ -77,6 +91,20 @@ Le damos clic en Aceptar, aceptar.
 Ya tenemos Go instalado y configurado. Así que vamos a probar si funciona.
 
 #### Comprobar la instalación
+
+
+
+---
+
+#### Instalando un versionador de código.
+
+Go necesita alguno 
+
+#### Git
+Instalar Git.
+Go utiliza Git para descargar las librerías.
+
+
 
 
 
