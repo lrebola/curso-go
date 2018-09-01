@@ -1,28 +1,27 @@
 ## Instalación en Windows
 
+- Descarga e instalación del binario
+- Configurar y comprobar las variables de entorno
+- Comprobar la instalación
+- Ejecutar un "Hola Mundo"
 
-Para la instalación de *Go* descargaremos desde su página [golang.org/dl](https://golang.org/dl/) el instalador correspondiente a la plataforma de Sistema Operativo que vayamos a usar.
 
+#### Descarga e instalación
+Link de descarga: [https://golang.org/dl](https://golang.org/dl/)
 
-
-
-
-#### Comprobar las variables
-
-Se pueden comprobar ambas variables con el comando `go env`.
+#### Configurar y comprobar las variables de entorno
 
 ```sh
 $ go env
 ...
-GOPATH="/Users/leonardorebola/go"
-GOROOT="/usr/local/go"
+GOPATH="C:\Go"
+GOROOT="C:\Go"
 ...
 # Entre otras variables que se listarán.
 ```
 
 #### Comprobar la instalación
 
-Verificarmos invocando al comando *go* para imprimir su versión:
 ```sh
 $ go version
 ```

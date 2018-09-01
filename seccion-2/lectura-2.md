@@ -1,5 +1,7 @@
 ## Instalación de Go
 
+![alt text](../resources/imgs/go_dl.png "The_Gopher")
+
 #### Pasos a seguir
 
 - Descargar binario
