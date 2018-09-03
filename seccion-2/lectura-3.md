@@ -29,15 +29,7 @@ $ go version
 
 #### Instalar un versionador de código
 
-La obtención de un código fuente se realiza utilizando una de las siguientes herramientas que se espera encontrar en su sistema:
-
-https://github.com/golang/go/wiki/GoGetTools
-
-Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de codigo
-
-Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
-
-`go get`
+Go necesita tengamos instalado en nuestro sistema operativo un versionador de código. Puede ser uno de los siguientes:
 
 - Git
 - SVN

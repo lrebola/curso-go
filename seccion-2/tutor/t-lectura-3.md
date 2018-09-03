@@ -35,11 +35,23 @@ Ahora desde el explorador de archivos vamos al directorio donde instalamos Go. S
 
 Aquí vemos que tenemos todos los archivos y carpetas de la instalación de Go.
 
-Antes de pasar a comprobar y configurar las variables de entornos, podemos chequear si Go ya funciona. Abrimos el CMD de Windows y escribimos "go". Como podemos observar ya se reconoce el comando go, esto significa que la variable de entorno GOROOT se configuró correctamente y ademas se agrego el directorio binario de Go al PATH de Windows.
+Como usamos el instalador automático, este ya se encargó de agregar las variables de entorno en Windows.
 
-Pero igual deberemos configurar la variable GOPATH, y de paso revisaremos GOROOT por si alguien tuvo problemas.
+Por lo tanto, antes de pasar a comprobarlo y configurar las variables de entorno, podemos chequear que Go ya funciona. Abrimos el CMD de Windows y escribimos "go". Como podemos observar ya se reconoce el comando go, esto significa que la variable de entorno GOROOT se configuró correctamente y ademas se agregó el path del directorio binario de Go al PATH de Windows.
 
 En caso que GOROOT no haya sido configurada por el instalador, recién cuando ejecutaron el comando go en el CMD de Windows les debería haber mostrado un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
+
+Ahora nos resta configurar la variable GOPATH, y de paso revisaremos GOROOT por si alguien tuvo problemas.
+
+Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y se lo asignaremos a la variable GOPATH.
+
+Vamos de nuevo al explorador de archivos, yo lo voy a hacer dentro de Documentos. Uds pueden hacerlo donde gusten, excepto en el mismo directorio donde esta instalado Go.
+
+Listo ya la cree, ahora dentro de esta carpeta debemos crear tres subcarpetas:
+
+src: donde crearemos nuestros proyectos de código.
+bin: en este directorio se generan los binarios ejecutables de los proyectos cuando los compilemos.
+y pkg: 
 
 
 ---
@@ -112,3 +124,17 @@ Go utiliza Git para descargar las librerías.
 
 
 
+---
+#### Instalar un versionador de código
+
+`go get`
+
+GO necesita tengamos instalado en nuestro sistema operativo un versionador de código.
+
+La obtención de un código fuente se realiza utilizando una de las siguientes herramientas que se espera encontrar en su sistema:
+
+https://github.com/golang/go/wiki/GoGetTools
+
+Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de codigo
+
+Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
