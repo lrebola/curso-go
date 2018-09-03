@@ -2,46 +2,56 @@
 
 #### Descarga e instalación
 
-Voy a describir el paso a paso de la instalación que consistirá en los siguientes ítems:
+Voy a describir el paso a paso de la instalación que consistirá en lo siguiente:
 
-- Descarga e instalación del binario
-- Configurar y comprobar las variables de entorno
-- Comprobar la instalación
-- Ejecutar un "Hola Mundo"
+- La descarga e instalación del binario
+- Configurar y comprobar las variables de entorno.
+- Instalar un versionador de código (Go necesita de uno, ya lo veremos).
+- Ejecutar un "Hola Mundo".
+
+---
 
 Entonces lo primero que debemos realizar es descargar el binario de Go en esta pagina: [https://golang.org/dl](https://golang.org/dl/).
 
-Aquí elegimos la opción Windows. Como podes observar, es compatible con todas las versiones de Windows desde el XP SP 3 en adelante.
+Aquí elegimos la opción Windows. Como podemos observar, es compatible con todas las versiones de Windows desde el XP SP 3 en adelante.
 
-Ya ha finalizado la descarga, y ahora solo debemos ejecutar el instalador.
+Ya ha finalizada la descarga, ahora solo debemos ejecutar el instalador.
 
-Este Widzar es el típico de cualquier instalación en Windows, le daremos clic a siguiente.
+Este wizard es el típico de cualquier instalación en Windows, le damos clic a siguiente.
 
 Aceptamos los términos y condiciones.
 
-Acá podemos escoger el directorio de instalación de Go, vamos a dejarlo en este path estándar y le damos a siguiente.
+Acá podemos elegir el directorio de instalación para Go, vamos a dejarlo en este path estándar y le damos a siguiente.
 
-Ahora clic en instalar.
+En instalar.
 
-Nos pregunta Windows si permitimos realizar la instalación. Ponemos si.
+Windows nos pregunta si permitimos realizar la instalación. Ponemos si.
 
-Ha comenzado el proceso de instalación en el sistema operativo, esperamos un rato a que finalice.
+Ha comenzado el proceso de instalación en el sistema operativo, esperamos un momento a que finalice.
 
 Nos avisa que la instalación a terminado, le damos a finalizar.
 
 ---
 
-Ahora desde el explorador de archivos vamos al directorio donde instalamos Go. Si no hemos cambiado el path en el widzar de instalación, lo encontraremos en C:\Go
+Ahora desde el explorador de archivos vamos a ver el directorio donde instalamos Go. Si no hemos cambiado el path de instalación, lo tenemos en la raíz del disco C, adentro de esta carpeta Go.
 
-Aquí vemos que tenemos todos los archivos y carpetas de la instalación de Go.
+Podemos ver que aquí tenemos todos los archivos y carpetas de la instalación. No tocaremos nada.
 
-Como usamos el instalador automático, este ya se encargó de agregar las variables de entorno en Windows.
+---
 
-Por lo tanto, antes de pasar a comprobarlo y configurar las variables de entorno, podemos chequear que Go ya funciona. Abrimos el CMD de Windows y escribimos "go". Como podemos observar ya se reconoce el comando go, esto significa que la variable de entorno GOROOT se configuró correctamente y ademas se agregó el path del directorio binario de Go al PATH de Windows.
+Como hemos usamos el instalador automático, este ya se encargó de agregar las variables de entorno en Windows.
 
-En caso que GOROOT no haya sido configurada por el instalador, recién cuando ejecutaron el comando go en el CMD de Windows les debería haber mostrado un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
+Por lo tanto, antes de pasar a comprobar y configurar las variables de entorno, podemos chequear que Go ya funciona.
 
-Ahora nos resta configurar la variable GOPATH, y de paso revisaremos GOROOT por si alguien tuvo problemas.
+Abrimos el CMD de Windows y escribimos "go". 
+
+Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas también se modificó la variable PATH del sistema operativo con el directorio binario de Go. Ya veremos esto ultimo.
+
+En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando go en el CMD de Windows les debería mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo. Esto se deberia solucionar con lo que veremos a continuación.
+
+---
+
+Nos resta configurar la variable GOPATH, de paso también revisaremos las variables GOROOT y PATH por si alguien tuvo problemas y no funciona el comando Go, seguramente deberá agregarlas.
 
 Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y se lo asignaremos a la variable GOPATH.
 
@@ -138,3 +148,11 @@ https://github.com/golang/go/wiki/GoGetTools
 Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de codigo
 
 Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
+
+
+
+#### Comprobar la instalación
+
+```sh
+$ go version
+```

@@ -2,13 +2,11 @@
 
 - Descarga e instalación del binario.
 - Configurar y comprobar las variables de entorno.
-- Comprobar la instalación.
 - Instalar un versionador de código.
 - Ejecutar un "Hola Mundo".
 
-
 #### Descarga e instalación
-Link de descarga: [https://golang.org/dl](https://golang.org/dl/)
+Instalador: [https://golang.org/dl](https://golang.org/dl/)
 
 #### Configurar y comprobar las variables de entorno
 
@@ -19,12 +17,6 @@ GOPATH="C:\Users\<TU_USUARIO>\Documents\Go"
 GOROOT="C:\Go"
 ...
 # Entre otras variables que se listarán.
-```
-
-#### Comprobar la instalación
-
-```sh
-$ go version
 ```
 
 #### Instalar un versionador de código
@@ -38,7 +30,7 @@ Go necesita tengamos instalado en nuestro sistema operativo un versionador de c�
 
 Utilizaremos Git: https://git-scm.com/downloads
 
-#### Ejecutar código
+#### Ejecutar un "Hola Mundo".
 
 Crearemos el fichero `hola-mundo.go`:
 
