@@ -12,6 +12,8 @@ Luego de su instalación, debemos configurar dos variables de entorno que Go nec
 
 La primera es GOROOT, que indica el directorio donde se encuentra instalado el binario de Go.
 
+###TODO: variable path
+
 Y la segunda es GOPATH, esta representa la ubicación de nuestro Espacio de Trabajo. Es decir, cual será nuestra carpeta de workspace donde escribiremos el código de nuestros proyectos.
 
 En Go se suele conservar todos los proyectos de código en un único espacio de trabajo. Esto difiere de otros entornos de programación donde cada workspace suele estar asociado a un repositorio de control de versiones. En Go, deberemos tener cada repositorio dentro de un mismo workspace. A menos que optemos por cambiar el path de GOPATH cada vez que queramos trabajar en otro directorio de workspace.
@@ -32,7 +34,7 @@ Esto es básicamente lo que debemos tener en cuenta, ahora vamos a instalar Go, 
 
 ---
 
-
+por mas que no vayan a instalar go en windows, recomiendo que todos vean el video de la instalacion de windows donde explicare mas en detalle.
 
 Workspaces
 

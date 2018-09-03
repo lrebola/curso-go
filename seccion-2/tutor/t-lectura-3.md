@@ -47,28 +47,33 @@ Abrimos el CMD de Windows y escribimos "go".
 
 Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas también se modificó la variable PATH del sistema operativo con el directorio binario de Go. Ya veremos esto ultimo.
 
-En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando go en el CMD de Windows les debería mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo. Esto se deberia solucionar con lo que veremos a continuación.
+En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando go en el CMD de Windows les debería mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
+
+Esto se debería solucionar configurando las variables como lo veremos a continuación.
 
 ---
 
-Nos resta configurar la variable GOPATH, de paso también revisaremos las variables GOROOT y PATH por si alguien tuvo problemas y no funciona el comando Go, seguramente deberá agregarlas.
+Entonces, si todo salió bien, solo nos resta configurar la variable GOPATH.
 
-Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y se lo asignaremos a la variable GOPATH.
+Pero de paso también revisaremos las variables GOROOT y PATH por si alguien tuvo problemas y no funciona el comando Go, deberá agregarlas si no están.
 
-Vamos de nuevo al explorador de archivos, yo lo voy a hacer dentro de Documentos. Uds pueden hacerlo donde gusten, excepto en el mismo directorio donde esta instalado Go.
+Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y este directorio se lo asignaremos a la variable GOPATH para configurar nuestro workspace.
 
-Listo ya la cree, ahora dentro de esta carpeta debemos crear tres subcarpetas:
+Vamos de nuevo al explorador de archivos, yo la voy a crear dentro de Documentos. Uds pueden crearla donde gusten, pero excepto en el mismo directorio donde esta instalado Go.
 
-src: donde crearemos nuestros proyectos de código.
-bin: en este directorio se generan los binarios ejecutables de los proyectos cuando los compilemos.
-y pkg: 
+Listo, ahora dentro de esta carpeta debemos crear las siguientes sub-carpetas:
+
+###TODO: chequear esto
+- src: donde crearemos nuestros proyectos de código.
+- bin: en este directorio se generan los binarios ejecutables de los proyectos cuando los compilemos.
+- y pkg: 
 
 
 ---
 
 #### Configurar y comprobar las variables de entorno
 
-El siguiente paso es revisar las variables de entorno, para ello acá en Windows 10 podemos escribir directamente "variables de entorno" y nos aparecerá esta pantalla.
+Ahora si vamos a revisar las variables de entorno, para ello acá en Windows 10 podemos escribir directamente "variables de entorno" y nos aparecerá esta pantalla.
 
 Para otras versiones de Windows, la forma mas estándar de llegar hasta aquí es ir a Equipo, botón derecho en Propiedades, Configuración avanzada del sistema y por ultimo Variables de Entorno.
 
