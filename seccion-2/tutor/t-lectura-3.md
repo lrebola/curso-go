@@ -61,7 +61,7 @@ Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo,
 
 Vamos de nuevo al explorador de archivos, yo la voy a crear dentro de Documentos. Uds pueden crearla donde gusten, pero excepto en el mismo directorio donde esta instalado Go.
 
-Listo, ahora dentro de esta carpeta debemos crear las siguientes sub-carpetas:
+Listo, ahora voy a copiar el path y dentro de esta carpeta debemos crear las siguientes sub-carpetas:
 
 ###TODO: chequear esto
 - src: donde crearemos nuestros proyectos de código.
@@ -73,35 +73,29 @@ Listo, ahora dentro de esta carpeta debemos crear las siguientes sub-carpetas:
 
 #### Configurar y comprobar las variables de entorno
 
-Ahora si vamos a revisar las variables de entorno, para ello acá en Windows 10 podemos escribir directamente "variables de entorno" y nos aparecerá esta pantalla.
+Ahora si vamos a revisar las variables de entorno, para ello acá en Windows 10 podemos escribir directamente "variables de entorno".
 
-Para otras versiones de Windows, la forma mas estándar de llegar hasta aquí es ir a Equipo, botón derecho en Propiedades, Configuración avanzada del sistema y por ultimo Variables de Entorno.
+Para otras versiones de Windows, la forma mas estándar de llegar hasta aquí es ir a Equipo, botón derecho en Propiedades, Configuración avanzada del sistema y por ultimo en Variables de Entorno.
 
 Algo a tener en cuenta en este punto, es que tenemos dos tipos de variables de entorno en Windows.
+
 Una global que corresponde al sistema, y otra de usuario. Es decir, las variables globales de sistema serán compartidas entre todos los usuarios del equipo, si tienen mas de un usuario. En cambio las variables de usuario solo la ve ese usuario en particular.
 
 Nosotros vamos a configurar directamente todo en las variables de entorno del sistema.
 
 Podemos observar que efectivamente tenemos GOROOT con el path de instalación. Si no lo tenemos, debemos añadirlo.
 
-Ahora debemos buscar la variable PATH, y verificamos que exista el parámetro: C:\Go\bin, esto también podría aparecer así: %GOROOT%\bin
+Ahora debemos buscar la variable PATH, y verificamos que exista el valor: C:\Go\bin.
 
 En bin se encuentran los binarios de Go.
 
-Bien, ahora vamos a agregar el path de nuestro workspace, es decir el directorio que usaremos como espacio de trabajo y que contendrá todos nuestros proyectos escritos en Go.
+Bien, ahora vamos a agregar el path de nuestro workspace, es decir, el directorio que usaremos como espacio de trabajo para todos nuestros proyectos escritos en Go.
 
-Volvamos al explorador de archivos, y veremos que dentro de nuestro usuario se a creado una carpeta de nombre Go.
+Para agregar GOPATH vamos a Nueva, escribimos GOPATH en nombre de variable y luego en Valor de la variable pegamos el path que copiamos hace un momento.
 
-Nos interesa la subcarpeta bin, que contendrá los binarios compilados de nuestros proyectos Go.
+Ahora solo nos queda modificar la variable PATH agregando la sub-carpeta bin de nuestro workspace. Esto nos sirve para ejecutar nuestros proyectos compilados. 
 
-Bien, ahora copiamos este path y vamos a agregarlo en la variable de entorno PATH.
-
-Para eso ubicamos esta variable “PATH” y damos clic en el botón “Editar”, ahora pegamos el path aquí y guardamos.
-
-Ahora solo nos queda agregar una ultima variable de entorno. La GOPATH.
-Vamos a Nueva, escribimos GOPATH en nombre de variable y luego en Valor de la variable pegamos nuevamente el path que copiamos hace un momento.
-
-Recordemos que GOPATH representa nuestro espacio de trabajo.
+Bien, para eso ubicamos esta variable “PATH” y damos clic en el botón “Editar”, ahora pegamos la dirección de nuestro workspace aquí, agregamos /bin y guardamos.
 
 Listo, ya tenemos las variables de entorno configuradas. GOROOT, GOPATH y PATH.
 
