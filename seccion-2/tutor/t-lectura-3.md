@@ -101,7 +101,7 @@ Listo, ya tenemos las variables de entorno configuradas. GOROOT, GOPATH y PATH.
 
 Repasando, estas variables de entorno son:
 
-GOROOT: EL directorio donde instalamos Go, y donde se encuentran los binarios de la Go Tool que nos permitirá compilar entre otras cosas.
+GOROOT: El directorio donde instalamos Go, y donde se encuentran los binarios de la Go Tool que nos permitirá compilar entre otras cosas.
 
 GOPATH: Es nuestro directorio de trabajo, aquí adentro vamos a crear todas las carpetas de proyectos Go.
 
@@ -110,10 +110,6 @@ PATH: Le indicamos a Windows donde se encuentran los binarios, para así poner e
 Le damos clic en Aceptar, aceptar.
 
 Ya tenemos Go instalado y configurado. Así que vamos a probar si funciona.
-
-#### Comprobar la instalación
-
-
 
 ---
 
@@ -144,7 +140,7 @@ La obtención de un código fuente se realiza utilizando una de las siguientes h
 
 https://github.com/golang/go/wiki/GoGetTools
 
-Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de codigo
+Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de código
 
 Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
 
@@ -155,3 +151,19 @@ Obtenga descargas de los paquetes nombrados por las rutas de importación, junto
 ```sh
 $ go version
 ```
+
+
+-> Ver variable gopath
+gopath  se usa para resolver las declaraciones de importación.
+
+La variable de entorno GOPATH enumera lugares para buscar el código Go.
+
+Si la variable de entorno no está configurada, GOPATH adopta de manera predeterminada un subdirectorio llamado "ir" en el directorio de inicio del usuario ($HOME/go on Unix, %USERPROFILE%\go on Windows), a menos que ese directorio tenga una distribución Go. Ejecute "go env GOPATH" para ver el GOPATH actual.
+
+The GOPATH environment variable specifies the location of your workspace. If no GOPATH is set, it is assumed to be $HOME/go on Unix systems and %USERPROFILE%\go on Windows. If you want to use a custom location as your workspace, you can set the GOPATH environment variable. 
+
+https://github.com/golang/go/wiki/SettingGOPATH
+
+Es posible tener un listado de directorios en GOPATH
+
+
