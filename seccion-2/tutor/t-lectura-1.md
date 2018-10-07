@@ -1,3 +1,7 @@
+##### Bienvenidos a la seccion numero 2.
+
+En esta seccion vamos a hacer un recorrido por las principales caracteristicas de Go, luego veremos como instalar Go en los diferentes sistemas operativos y como preparar el entorno de desarrollo con Visual Studio Code.
+
 ## Características de Go
 
 Nos toca primero revisar esta parte meramente teórica:

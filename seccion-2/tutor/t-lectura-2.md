@@ -1,51 +1,30 @@
-- Descargar binario
+Los pasos a seguir en cada instalacion de sistema operativo siempre serán los mismos, en este orden:
 
-Vamos a ver en que consiste la instalación de Go, para luego hacerlo en Windows, Linux y Mac OS. Para que cada uno pueda hacerlo en su Sistema Operativo preferido.
-
-El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que pronto veremos.
-
----
-
-- Configurar variables de entorno
-
-Luego de su instalación, debemos configurar dos variables de entorno que Go necesita:
-
-La primera es GOROOT, que indica el directorio donde se encuentra instalado el binario de Go.
-
-###TODO: variable path
-
-Y la segunda es GOPATH, esta representa la ubicación de nuestro Espacio de Trabajo. Es decir, cual será nuestra carpeta de workspace donde escribiremos el código de nuestros proyectos.
-
-En Go se suele conservar todos los proyectos de código en un único espacio de trabajo. Esto difiere de otros entornos de programación donde cada workspace suele estar asociado a un repositorio de control de versiones. En Go, deberemos tener cada repositorio dentro de un mismo workspace. A menos que optemos por cambiar el path de GOPATH cada vez que queramos trabajar en otro directorio de workspace.
-
-Además GOPATH es usado para resolver las importaciones de paquetes y no puede coincidir con el directorio de instalación.
-
----
-
+- Descargar e instalar el binario
+- Comprobar las variables de entorno
+- Instalar un versionador de código
 - Comprobar la instalación
 
-La verificáramos ejecutando el comando *go version* para imprimir su versión.
+----
 
-Se pueden comprobar ambas variables con el comando *go env*.
+El binario de Go que instalaremos nos permite compilar, descargar e instalar paquetes o librerías y ejecutar varios comandos útiles que veremos más adelante.
+
+Su instalacion es muy simple, y a partir de la version 1.8 ya no es necesario configurar manualmente alguna de sus variables de entorno como figura en muchos tutoriales que podemos encontrar por Internet.
+
+Pero igualmente haremos un repaso de estas variables de entorno para saber como funcionan y como se configuran.
+
+A saber, dichas variables son GOROOT y GOPATH.
+
+Donde `GOROOT` indica donde se encuentra instalado Go. Y como podemos observar en esta tabla, su directorio de instalacion predeterminado en Windows esta en la unidad C.
+
+Mientras que en los sistemas operativos basados en Unix, como Linux y Mac, se instala en /usr/local/go.
+
+En cuanto a la variable `GOPATH`, esta especifica la ubicación del workspace, es decir nuestro espacio de trabajo donde escribiremos el código de nuestros proyectos. Además GOPATH es usado para resolver las importaciones de paquetes y no puede coincidir con el directorio de instalación.
+
+El valor predeterminado de esta variable en la instalacion lo podemos ver en esta tabla. Para Windows será el directorio de tu usuario. Este se encuentra dentro de la carpeta "Users" que esta dentro de la unidad C. Que sería C:\Users\TU_USUARIO.
+
+Para Linux y Max, tambien será en el directorio Home del usuario.
 
 ---
 
-Esto es básicamente lo que debemos tener en cuenta, ahora vamos a instalar Go, configurar las variables de entorno y ejecutar un Hola Mundo.
-
----
-
-por mas que no vayan a instalar go en windows, recomiendo que todos vean el video de la instalacion de windows donde explicare mas en detalle.
-
-Workspaces
-
-A workspace is a directory hierarchy with two directories at its root:
-
-    src contains Go source files, and
-    bin contains executable commands. 
-
-Un espacio de trabajo es una jerarquía de directorios con dos directorios en su raíz:
-
-src contiene archivos fuente Go, y
-bin contiene comandos ejecutables.
-
-La herramienta go crea e instala binarios en el directorio bin.
+Ahora pasemos a realizar las instalaciones en cada sistema operativo.

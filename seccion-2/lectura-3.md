@@ -19,6 +19,13 @@ GOROOT="C:\Go"
 # Entre otras variables que se listarán.
 ```
 
+#### Comprobar la instalación
+
+```sh
+$ go version
+go version go1.XX.X X/X
+```
+
 #### Instalar un versionador de código
 
 Go necesita tengamos instalado en nuestro sistema operativo un versionador de código. Puede ser uno de los siguientes:

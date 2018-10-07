@@ -148,6 +148,12 @@ Obtenga descargas de los paquetes nombrados por las rutas de importación, junto
 
 #### Comprobar la instalación
 
+- Comprobar la instalación
+
+La verificáramos ejecutando el comando *go version* para imprimir su versión.
+
+Se pueden comprobar ambas variables con el comando *go env*.
+
 ```sh
 $ go version
 ```

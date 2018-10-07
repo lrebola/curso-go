@@ -4,42 +4,26 @@
 
 #### Pasos a seguir
 
-- Descargar binario
-- Configurar variables de entorno
+- Descargar e instalar el binario
+- Comprobar las variables de entorno
+- Instalar un versionador de código
 - Comprobar la instalación
 
 #### Variables de entorno
 
 ##### `GOROOT`
 
-- Indica donde se encuentra instalado Go.
+| OS | PATH |
+| ------ | ------ |
+| Windows | C:\Go |
+| Linux y Mac OS | /usr/local/go |
+
+##### `GOPATH`
 
 | OS | PATH |
 | ------ | ------ |
-| Linux y Mac OS | /usr/local/go |
-| Windows | C:\Go |
-
-##### `GOPATH`
-* Especifica la ubicación del workspace.
-* Este path es usado para resolver importaciones de paquetes.
-
-#### Comprobar la instalación
-
-```sh
-$ go version
-go version go1.XX.X X/X
-```
-
-#### Comprobar las variables
-
-```sh
-$ go env
-...
-GOPATH="/Users/leonardorebola/go"
-GOROOT="/usr/local/go"
-...
-# Entre otras variables que se listarán.
-```
+| Windows | %USERPROFILE%/go |
+| Linux y Mac OS | $HOME/go |
 
 #### Referencias
 
