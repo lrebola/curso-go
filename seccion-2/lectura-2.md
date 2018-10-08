@@ -25,15 +25,13 @@
 | Windows | %USERPROFILE%/go |
 | Linux y Mac | $HOME/go |
 
-###### Lista de directorios
+ Lista de directorios en GOPATH:
 
 | OS | SEPARADOR | EJEMPLO |
 | ------ | :------: | ------ |
 | Linux y Mac | : | GOPATH="/home/go:/other/gopath" |
 | Windows | ; | GOPATH="%USERPROFILE%/go;C:\other\gopath"
  |
-
-
 
 #### Versionadores de código
 

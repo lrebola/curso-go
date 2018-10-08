@@ -53,19 +53,23 @@ https://stackoverflow.com/questions/36017724/can-i-have-multiple-gopath-director
 
 
 ---
+#### Instalar un versionador de código
 
 Y por ultimo, con respecto al versionador de código es un requisito para trabajar con Go tener instalado uno en el Sistema Operativo. Y se preguntaran ¿por qué?
+
+
+Esto se debe que para descargar paquetes y dependencias Go lo realiza a través del comando `go get`. Este comando realiza la obtención del código fuente utilizando alguno de estos sistemas de versionamiento de código.
+
+
+
 
 GoGetTools
 
 El ir a buscar el código fuente se realiza usando una de las siguientes herramientas que se espera encontrar en su sistema:
 
-Esto se debe que para descargar paquetes y dependencias Go lo realiza a través del comando `go get`. Este comando realiza la obtencion del codigo fuente utilizando alguno de estos sistemas de versionamiento de codigo.
 
 
 
----
-#### Instalar un versionador de código
 
 `go get`
 
