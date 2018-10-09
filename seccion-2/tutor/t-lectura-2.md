@@ -21,33 +21,44 @@ Donde `GOROOT` indica donde se encuentra instalado Go. Y como podemos observar e
 
 Mientras que en los sistemas operativos basados en Unix, como Linux y Mac, se instala en /usr/local/go.
 
-En cuanto a la variable `GOPATH`, 
+---
 
-La variable de entorno GOPATH enumera lugares para buscar el código Go.
+En cuanto a la variable `GOPATH`, básicamente enumera los lugares para buscar el código, compilar e instalar los paquetes no estándares que importamos en nuestros proyectos.
 
-La ruta Go se usa para resolver las declaraciones de importación.
+Cuando digo enumera, me refiero a listar los directorios donde el compilador de Go debe buscar el código.
+
+En otras palabras, GOPATH define cuales serán nuestros workspaces (o espacios de trabajo) y este no puede coincidir con el directorio de instalación.
+
+Generalmente es suficiente usar un solo directorio de trabajo para todos los códigos.
+
+Les recomiendo, al menos en un principio trabajar con un solo workspace definido en la variable GOPATH porque se pueden encontrar con algunos inconvenientes.
+
+Porque GOPATH también es usado por el compilador para resolver las declaraciones de importación de paquetes.
+
+Go busca en cada directorio listado en GOPATH para encontrar el código fuente, pero los paquetes que importamos, siempre se descargan en el primer directorio de la lista.
+
+Por lo tanto debemos ser organizados para trabajar de esta manera con varios espacios de trabajos.
+
+Como podemos observar en la tabla, el valor predeterminado de esta variable para Windows será el directorio de tu usuario. Este se encuentra dentro de la carpeta "Users" que esta dentro de la unidad C. Que sería C:\Users\TU_USUARIO.
+
+Para Linux y Max, también será en el directorio Home del usuario.
+
+
+
+
+----
+
+
 
 En Unix, el valor es una cadena separada por dos puntos.
 
 En Windows, el valor es una cadena separada por punto y coma.
 
-GOPATH debe configurarse para obtener, compilar e instalar paquetes fuera del árbol Go estándar.
 
 Cada directorio listado en GOPATH debe tener una estructura prescrita:
 
-Go busca en cada directorio listado en GOPATH para encontrar el código fuente, pero los paquetes nuevos siempre se descargan en el primer directorio de la lista.
 
-Por lo tanto debemos ser organizados para trabajar de esta manera.
-
-esta especifica la ubicación del workspace, es decir nuestro espacio de trabajo donde escribiremos el código de nuestros proyectos. Además GOPATH es usado para resolver las importaciones de paquetes y no puede coincidir con el directorio de instalación.
-
-El valor predeterminado de esta variable en la instalación lo podemos ver en esta tabla. Para Windows será el directorio de tu usuario. Este se encuentra dentro de la carpeta "Users" que esta dentro de la unidad C. Que sería C:\Users\TU_USUARIO.
-
-Para Linux y Max, también será en el directorio Home del usuario.
-
-Solo a modo de comentario, decir que esta variable también soporta una lista de directorios si queremos tener varios workspace. Pero debemos tener en cuenta que la importación de paquetes y dependencias si las obtenemos con go get, estas se descargaran en el primer directorio de la lista.
-
-Para mas informacion se puede ejecutar el comando: go help gopath
+Para más información se puede ejecutar el comando: go help gopath
 
 https://stackoverflow.com/questions/36017724/can-i-have-multiple-gopath-directories
 

@@ -20,6 +20,10 @@
 
 ##### `GOPATH`
 
+- Ubicación del código
+- Importación de paquetes
+- Listar workspaces
+
 | OS | PATH |
 | ------ | ------ |
 | Windows | %USERPROFILE%/go |
