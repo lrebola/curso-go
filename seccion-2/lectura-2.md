@@ -12,6 +12,7 @@
 #### Variables de entorno
 
 ##### `GOROOT`
+Valores predeterminados:
 
 | OS | PATH |
 | ------ | ------ |
@@ -20,22 +21,28 @@
 
 ##### `GOPATH`
 
+Se utiliza para:
 - Ubicación del código
-- Importación de paquetes
 - Listar workspaces
+- Importación de paquetes
 
-| OS | PATH |
-| ------ | ------ |
-| Windows | %USERPROFILE%/go |
-| Linux y Mac | $HOME/go |
+| OS | PATH | EJEMPLO |
+| ------ | ------ | ------ |
+| Windows | %USERPROFILE%/go | C:\Users\TU_USUARIO\go |
+| Linux | $HOME/go | /home/TU_USUARIO/go |
+| Mac | $HOME/go | /home/TU_USUARIO/go |
 
  Lista de directorios en GOPATH:
 
 | OS | SEPARADOR | EJEMPLO |
 | ------ | :------: | ------ |
 | Linux y Mac | : | GOPATH="/home/go:/other/gopath" |
-| Windows | ; | GOPATH="%USERPROFILE%/go;C:\other\gopath"
- |
+| Windows | ; | GOPATH="%USERPROFILE%/go;C:\other\gopath" |
+ 
+Estructura de GOPATH:
+
+- src
+- bin
 
 #### Versionadores de código
 

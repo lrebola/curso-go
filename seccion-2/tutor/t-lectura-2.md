@@ -1,6 +1,6 @@
+En esta clase previa a ejecutar la instalación en cada sistema operativo explicaré varias cosas a tener en cuenta durante la misma, para no ser repetitivo en los siguientes tres videos.
 
-
-Los pasos a seguir en cada instalación de sistema operativo siempre serán los mismos, en este orden:
+Entonces, los pasos que vamos a realizar en cada instalación de los sistemas operativos siempre serán los mismos:
 
 - Descargar e instalar el binario
 - Comprobar las variables de entorno
@@ -16,6 +16,8 @@ Su instalación es muy simple, y a partir de la version 1.8 ya no es necesario c
 Pero igualmente haremos un repaso de estas variables de entorno para saber como funcionan y como se configuran.
 
 A saber, dichas variables son GOROOT y GOPATH.
+
+---
 
 Donde `GOROOT` indica donde se encuentra instalado Go. Y como podemos observar en esta tabla, su directorio de instalación predeterminado en Windows esta en la unidad C.
 
@@ -43,25 +45,23 @@ Como podemos observar en la tabla, el valor predeterminado de esta variable para
 
 Para Linux y Max, también será en el directorio Home del usuario.
 
+En cuanto a como configurar varios espacios de trabajo en la variable, según el sistema operativo el separador de directorios será uno de los que figura en esta tabla.
 
+En Windows, los valores son separados por punto y coma.
 
-
-----
-
-
-
-En Unix, el valor es una cadena separada por dos puntos.
-
-En Windows, el valor es una cadena separada por punto y coma.
-
-
-Cada directorio listado en GOPATH debe tener una estructura prescrita:
-
+En Unix, los valores son separados por dos puntos.
 
 Para más información se puede ejecutar el comando: go help gopath
 
-https://stackoverflow.com/questions/36017724/can-i-have-multiple-gopath-directories
+----
 
+Por ultimo con respecto a GOPATH, cada directorio listado en la variable debe tener una estructura de carpetas creada:
+
+La carpeta `src` que será como su nombre lo indica, donde debemos colocar el código fuente.
+
+Por lo tanto, aquí adentro crearemos las subcarpetas de nuestros proyectos y los repositorios de nuestro versionador de código.
+
+Y la carpeta `bin` será donde la go tool compile e instale los binarios generados. Son los ejecutables.
 
 ---
 #### Instalar un versionador de código
@@ -111,8 +111,8 @@ Ahora pasemos a realizar las instalaciones en cada sistema operativo.
 
 
 
-In $GOPATH, you must have three folders as follows:
 
-    src for source files whose suffix is .go, .c, .g, .s.
-    pkg for compiled files whose suffix is .a.
-    bin for executable files
+
+
+
+https://stackoverflow.com/questions/36017724/can-i-have-multiple-gopath-directories
