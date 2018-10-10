@@ -1,29 +1,24 @@
 ## Instalación en Windows
 
-#### Descarga e instalación
+Bueno, vamos a instalar Go en Windows siguiendo los pasos descriptos en el video anterior. El primero es:
 
-Voy a describir el paso a paso de la instalación que consistirá en lo siguiente:
+#### Descarga e instalación del binario
 
-- La descarga e instalación del binario
-- Configurar y comprobar las variables de entorno.
-- Instalar un versionador de código (Go necesita de uno, ya lo veremos).
-- Ejecutar un "Hola Mundo".
+Entonces lo primero que debemos realizar es descargar el binario en esta pagina: [https://golang.org/dl](https://golang.org/dl/).
 
----
-
-Entonces lo primero que debemos realizar es descargar el binario de Go en esta pagina: [https://golang.org/dl](https://golang.org/dl/).
+Veamos...
 
 Aquí elegimos la opción Windows. Como podemos observar, es compatible con todas las versiones de Windows desde el XP SP 3 en adelante.
 
-Ya ha finalizada la descarga, ahora solo debemos ejecutar el instalador.
+Esperamos a que finalice la descarga, y ahora solo debemos ejecutar el instalador.
 
 Este wizard es el típico de cualquier instalación en Windows, le damos clic a siguiente.
 
 Aceptamos los términos y condiciones.
 
-Acá podemos elegir el directorio de instalación para Go, vamos a dejarlo en este path estándar y le damos a siguiente.
+Acá podemos elegir el directorio de instalación para Go, vamos a dejarlo en este path predeterminado y le damos clic a siguiente.
 
-En instalar.
+Ahora en instalar.
 
 Windows nos pregunta si permitimos realizar la instalación. Ponemos si.
 
@@ -39,47 +34,43 @@ Podemos ver que aquí tenemos todos los archivos y carpetas de la instalación. 
 
 ---
 
-Como hemos usamos el instalador automático, este ya se encargó de agregar las variables de entorno en Windows.
+Como hemos usado el instalador automático, este ya se encargó de agregar las variables de entorno en Windows. Recordemos que hablamos de las variables GOROOT y GOPATH.
 
-Por lo tanto, antes de pasar a comprobar y configurar las variables de entorno, podemos chequear que Go ya funciona.
+Por lo tanto, ya podemos comprobar la instalación y la configuración de las variables.
 
-Abrimos el CMD de Windows y escribimos "go". 
+Abrimos el CMD de Windows
 
-Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas también se modificó la variable PATH del sistema operativo con el directorio binario de Go. Ya veremos esto ultimo.
+Y escribimos "go". 
 
-En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando go en el CMD de Windows les debería mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
-
-Esto se debería solucionar configurando las variables como lo veremos a continuación.
+Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas que también se modificó la variable PATH del sistema operativo con el directorio binario de Go, porque fue reconocido el comando que ejecutamos en el CMD.
 
 ---
 
-Entonces, si todo salió bien, solo nos resta configurar la variable GOPATH.
+Podemos revisar los valores configurados por el instalador ejecutando el comando: go env
 
-Pero de paso también revisaremos las variables GOROOT y PATH por si alguien tuvo problemas y no funciona el comando Go, deberá agregarlas si no están.
+Las encontraremos como se muestra acá.
 
-Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y este directorio se lo asignaremos a la variable GOPATH para configurar nuestro workspace.
+Vamos a ver, ejecutamos el comando.
 
-Vamos de nuevo al explorador de archivos, yo la voy a crear dentro de Documentos. Uds pueden crearla donde gusten, pero excepto en el mismo directorio donde esta instalado Go.
+Acá esta una, y acá la otra. Cada una con sus paths configurados.
 
-Listo, ahora voy a copiar el path y dentro de esta carpeta debemos crear las siguientes sub-carpetas:
+---
 
-###TODO: chequear esto
-- src: donde crearemos nuestros proyectos de código.
-- bin: en este directorio se generan los binarios ejecutables de los proyectos cuando los compilemos.
-- y pkg: 
+En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando go en el CMD de Windows les deberá mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
 
+Esto se puede solucionar agregando las variables manualmente, por eso vamos a revisar como las configuró el instalador.
 
 ---
 
 #### Configurar y comprobar las variables de entorno
 
-Ahora si vamos a revisar las variables de entorno, para ello acá en Windows 10 podemos escribir directamente "variables de entorno".
+Para ello acá en Windows 10 podemos escribir directamente "variables de entorno".
 
-Para otras versiones de Windows, la forma mas estándar de llegar hasta aquí es ir a Equipo, botón derecho en Propiedades, Configuración avanzada del sistema y por ultimo en Variables de Entorno.
+Para otras versiones de Windows, la forma mas estándar de llegar hasta aquí es ir a Equipo, botón derecho en Propiedades, "Configuración avanzada del sistema" y por ultimo en "Variables de Entorno".
 
 Algo a tener en cuenta en este punto, es que tenemos dos tipos de variables de entorno en Windows.
 
-Una global que corresponde al sistema, y otra de usuario. Es decir, las variables globales de sistema serán compartidas entre todos los usuarios del equipo, si tienen mas de un usuario. En cambio las variables de usuario solo la ve ese usuario en particular.
+Una global que corresponde al sistema, y otra de usuario. Es decir, las variables globales de sistema serán compartidas entre todos los usuarios del equipo -si tienen mas de un usuario-. En cambio las variables de usuario, solo la verá el usuario que estan utilizando.
 
 Nosotros vamos a configurar directamente todo en las variables de entorno del sistema.
 
@@ -173,3 +164,20 @@ https://github.com/golang/go/wiki/SettingGOPATH
 Es posible tener un listado de directorios en GOPATH
 
 
+
+
+
+
+---
+
+
+
+Entonces, si todo salió bien, solo nos resta configurar la variable GOPATH.
+
+Pero de paso también revisaremos las variables GOROOT y PATH por si alguien tuvo problemas y no funciona el comando Go, deberá agregarlas si no están.
+
+Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y este directorio se lo asignaremos a la variable GOPATH para configurar nuestro workspace.
+
+Vamos de nuevo al explorador de archivos, yo la voy a crear dentro de Documentos. Uds pueden crearla donde gusten, pero excepto en el mismo directorio donde esta instalado Go.
+
+Listo, ahora voy a copiar el path y dentro de esta carpeta debemos crear las siguientes sub-carpetas:

@@ -1,14 +1,14 @@
 ## Instalación en Windows
 
 - Descarga e instalación del binario.
-- Configurar y comprobar las variables de entorno.
+- Comprobar las variables de entorno.
 - Instalar un versionador de código.
 - Ejecutar un "Hola Mundo".
 
-#### Descarga e instalación
+#### Descarga e instalación del binario
 Instalador: [https://golang.org/dl](https://golang.org/dl/)
 
-#### Configurar y comprobar las variables de entorno
+#### Comprobar las variables de entorno
 
 ```sh
 $ go env
