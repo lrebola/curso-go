@@ -66,44 +66,18 @@ Y la carpeta `bin` será donde la go tool compile e instale los binarios generad
 ---
 #### Instalar un versionador de código
 
-Y por ultimo, con respecto al versionador de código es un requisito para trabajar con Go tener instalado uno en el Sistema Operativo. Y se preguntaran ¿por qué?
+GO necesita tengamos instalado en nuestro Sistema Operativo un versionador de código para descargar paquetes nombrados por las rutas de importación, junto con sus dependencias. 
 
+Una ruta de importación describe cómo puede el comando `go get` obtener el código fuente del paquete utilizando un sistema de control de revisión como Git o SVN.
 
-Esto se debe que para descargar paquetes y dependencias Go lo realiza a través del comando `go get`. Este comando realiza la obtención del código fuente utilizando alguno de estos sistemas de versionamiento de código.
+Entonces, este comando realiza la obtención del código fuente de repositorios remotos usando una de las siguientes herramientas que espera encontrar en el sistema:
 
+- Git
+- Subversion
+- Mercurial
+- Bazaar
 
-
-
-GoGetTools
-
-El ir a buscar el código fuente se realiza usando una de las siguientes herramientas que se espera encontrar en su sistema:
-
-
-
-
-
-`go get`
-
-GO necesita tengamos instalado en nuestro sistema operativo un versionador de código.
-
-La obtención de un código fuente se realiza utilizando una de las siguientes herramientas que se espera encontrar en su sistema:
-
-https://github.com/golang/go/wiki/GoGetTools
-
-Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de código
-
-Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
-
-Una ruta de importación puede describir cómo obtener el código fuente del paquete utilizando un sistema de control de revisión como Git o Mercurial.
-
-La herramienta go utiliza esta propiedad para recuperar paquetes de repositorios remotos.
-
-Si incluye la URL del repositorio en la ruta de importación del paquete, vaya a obtener, compilará e instálela automáticamente:
-
-If you include the repository URL in the package's import path, go get will fetch, build, and install it automatically: 
-
-
-Si el paquete especificado no está presente en un espacio de trabajo, go get lo colocará dentro del primer espacio de trabajo especificado por GOPATH.
+Luego de obtener el código, lo compilará e instalará automáticamente dentro del primer o único directorio listado de GOPATH.
 
 ---
 
@@ -113,6 +87,6 @@ Ahora pasemos a realizar las instalaciones en cada sistema operativo.
 
 
 
-
+https://github.com/golang/go/wiki/GoGetTools
 
 https://stackoverflow.com/questions/36017724/can-i-have-multiple-gopath-directories
