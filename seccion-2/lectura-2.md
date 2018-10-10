@@ -32,7 +32,7 @@ Se utiliza para:
 | Linux | $HOME/go | /home/TU_USUARIO/go |
 | Mac | $HOME/go | /home/TU_USUARIO/go |
 
- Lista de directorios en GOPATH:
+ Listar directorios en GOPATH:
 
 | OS | SEPARADOR | EJEMPLO |
 | ------ | :------: | ------ |
