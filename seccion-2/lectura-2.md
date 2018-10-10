@@ -22,8 +22,8 @@ Valores predeterminados:
 ##### `GOPATH`
 
 Se utiliza para:
-- Ubicación del código
-- Listar workspaces
+- Ubicación del código fuente
+- Listar los workspaces
 - Importación de paquetes
 
 | OS | PATH | EJEMPLO |
@@ -39,10 +39,23 @@ Se utiliza para:
 | Linux y Mac | : | GOPATH="/home/go:/other/gopath" |
 | Windows | ; | GOPATH="%USERPROFILE%/go;C:\other\gopath" |
  
-Estructura de GOPATH:
+Estructura de directorios para GOPATH:
 
 - src
 - bin
+
+Ejemplo:
+
+        $GOPATH/
+            src/
+                github.com/user/repo/
+                    mypkg/
+                        mysrc1.go
+                        mysrc2.go
+                    cmd/mycmd/
+                        main.go
+            bin/
+                mycmd
 
 #### Versionadores de código
 
