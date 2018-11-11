@@ -8,6 +8,13 @@
 #### Descarga e instalación del binario
 Instalador: [https://golang.org/dl](https://golang.org/dl/)
 
+#### Comprobar la instalación
+
+```sh
+$ go version
+go version go1.XX.X X/X
+```
+
 #### Comprobar las variables de entorno
 
 ```sh
@@ -19,23 +26,10 @@ GOROOT="C:\Go"
 # Entre otras variables que se listarán.
 ```
 
-#### Comprobar la instalación
-
-```sh
-$ go version
-go version go1.XX.X X/X
-```
-
 #### Instalar un versionador de código
 
-Go necesita tengamos instalado en nuestro sistema operativo un versionador de código. Puede ser uno de los siguientes:
-
-- Git
-- SVN
-- Mercurial
-- Bazaar
-
 Utilizaremos Git: https://git-scm.com/downloads
+
 
 #### Ejecutar un "Hola Mundo".
 
@@ -61,4 +55,3 @@ El código siempre debe estar dentro del **workspace** *(definido por GOPATH)*, 
 
 - `go run` compila y ejecuta el código.
 - `go build` compila y genera un ejecutable binario.
-

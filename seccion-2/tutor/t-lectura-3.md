@@ -30,39 +30,53 @@ Nos avisa que la instalación a terminado, le damos a finalizar.
 
 Ahora desde el explorador de archivos vamos a ver el directorio donde instalamos Go. Si no hemos cambiado el path de instalación, lo tenemos en la raíz del disco C, adentro de esta carpeta Go.
 
-Podemos ver que aquí tenemos todos los archivos y carpetas de la instalación. No tocaremos nada.
+Podemos ver que aquí tenemos todos los archivos y carpetas de la instalación. Dejamos todo como está.
 
 ---
 
-Como hemos usado el instalador automático, este ya se encargó de agregar las variables de entorno en Windows. Recordemos que hablamos de las variables GOROOT y GOPATH.
 
-Por lo tanto, ya podemos comprobar la instalación y la configuración de las variables.
+#### Comprobar la instalación
 
-Abrimos el CMD de Windows
+- Comprobar la instalación
 
-Y escribimos "go". 
+La verificáramos ejecutando el comando *go version* para imprimir su versión.
 
-Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas que también se modificó la variable PATH del sistema operativo con el directorio binario de Go, porque fue reconocido el comando que ejecutamos en el CMD.
+```sh
+$ go version
+```
+Vamos a la terminal, en este caso el CMD de Windows, y ejecutamos. Bien, Go esta funcionando.
 
----
+Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas que también se modificó la variable PATH del sistema operativo con el directorio binario de Go, porque fue reconocido el comando en el CMD.
 
-Podemos revisar los valores configurados por el instalador ejecutando el comando: go env
+Podemos ver, que se reconoce ejecutándolo en cualquier directorio.
 
-Las encontraremos como se muestra acá.
+#### Comprobar las variables de entorno
 
-Vamos a ver, ejecutamos el comando.
+Ahora vamos a comprobar las variables de entorno, aunque ya hemos verificado que Go esta funcionando, es importante conocer cuales son, para que sirven y poder resolver problemas en diferentes ambientes.
+
+En este caso como hemos usado el instalador automático, este ya se encargó de agregar las variables de entorno en Windows.
+
+Las variables de entorno son estas dos: GOROOT y GOPATH.
+
+Podemos revisar los valores configurados por el instalador como se muestra acá ejecutando el comando: go env.
+
+El resultado que nos imprima la terminal será algo parecido a los valores de esta tabla.
+
+Vamos a ver. Ejecutamos el comando.
 
 Acá esta una, y acá la otra. Cada una con sus paths configurados.
 
+También podemos consultar directamente el valor de una variable en particular agregando al comando el nombre de dicha variable: "go env GOPATH"
+
 ---
 
-En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando go en el CMD de Windows les deberá mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
+En caso que GOROOT o PATH no hayan sido configuradas por el instalador, cuando ejecuten el comando en el CMD de Windows les deberá mostrar un mensaje que dice: "Go" no se reconoce como un comando interno o externo.
 
 Esto se puede solucionar agregando las variables manualmente, por eso vamos a revisar como las configuró el instalador.
 
----
+Además será util comprender esto, porque en caso de necesitar trabajar con versiones más antiguas de Go deberán realizar manualmente este proceso de configuración.
 
-#### Configurar y comprobar las variables de entorno
+---
 
 Para ello acá en Windows 10 podemos escribir directamente "variables de entorno".
 
@@ -82,6 +96,8 @@ En bin se encuentran los binarios de Go.
 
 Bien, ahora vamos a agregar el path de nuestro workspace, es decir, el directorio que usaremos como espacio de trabajo para todos nuestros proyectos escritos en Go.
 
+--TODO: Verificar esto:
+
 Para agregar GOPATH vamos a Nueva, escribimos GOPATH en nombre de variable y luego en Valor de la variable pegamos el path que copiamos hace un momento.
 
 Ahora solo nos queda modificar la variable PATH agregando la sub-carpeta bin de nuestro workspace. Esto nos sirve para ejecutar nuestros proyectos compilados. 
@@ -98,70 +114,20 @@ GOPATH: Es nuestro directorio de trabajo, aquí adentro vamos a crear todas las 
 
 PATH: Le indicamos a Windows donde se encuentran los binarios, para así poner ejecutarlos desde la linea de comandos, el CMD en Windows.
 
-Le damos clic en Aceptar, aceptar.
+Le damos clic en Aceptar, Aceptar.
 
 Ya tenemos Go instalado y configurado. Así que vamos a probar si funciona.
 
 ---
 
-#### Instalando un versionador de código.
-
-Go necesita alguno 
-
-#### Git
-Instalar Git.
-Go utiliza Git para descargar las librerías.
-
-
-
-
-
-
-
-
-
----
 #### Instalar un versionador de código
 
-`go get`
-
-GO necesita tengamos instalado en nuestro sistema operativo un versionador de código.
-
-La obtención de un código fuente se realiza utilizando una de las siguientes herramientas que se espera encontrar en su sistema:
-
-https://github.com/golang/go/wiki/GoGetTools
-
-Para descargar paquetes y dependencias Go utiliza uno de los siguientes versionadores de código
-
-Obtenga descargas de los paquetes nombrados por las rutas de importación, junto con sus dependencias. 
 
 
 
-#### Comprobar la instalación
-
-- Comprobar la instalación
-
-La verificáramos ejecutando el comando *go version* para imprimir su versión.
-
-Se pueden comprobar ambas variables con el comando *go env*.
-
-```sh
-$ go version
-```
 
 
--> Ver variable gopath
-gopath  se usa para resolver las declaraciones de importación.
 
-La variable de entorno GOPATH enumera lugares para buscar el código Go.
-
-Si la variable de entorno no está configurada, GOPATH adopta de manera predeterminada un subdirectorio llamado "ir" en el directorio de inicio del usuario ($HOME/go on Unix, %USERPROFILE%\go on Windows), a menos que ese directorio tenga una distribución Go. Ejecute "go env GOPATH" para ver el GOPATH actual.
-
-The GOPATH environment variable specifies the location of your workspace. If no GOPATH is set, it is assumed to be $HOME/go on Unix systems and %USERPROFILE%\go on Windows. If you want to use a custom location as your workspace, you can set the GOPATH environment variable. 
-
-https://github.com/golang/go/wiki/SettingGOPATH
-
-Es posible tener un listado de directorios en GOPATH
 
 
 
@@ -172,9 +138,9 @@ Es posible tener un listado de directorios en GOPATH
 
 
 
-Entonces, si todo salió bien, solo nos resta configurar la variable GOPATH.
 
-Pero de paso también revisaremos las variables GOROOT y PATH por si alguien tuvo problemas y no funciona el comando Go, deberá agregarlas si no están.
+
+
 
 Antes de seguir, vamos a crear una carpeta que será nuestro espacio de trabajo, y este directorio se lo asignaremos a la variable GOPATH para configurar nuestro workspace.
 

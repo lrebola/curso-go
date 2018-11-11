@@ -41,9 +41,13 @@ Go busca en cada directorio listado en GOPATH para encontrar el código fuente, 
 
 Por lo tanto debemos ser organizados para trabajar de esta manera con varios espacios de trabajos.
 
-Como podemos observar en la tabla, el valor predeterminado de esta variable para Windows será el directorio de tu usuario. Este se encuentra dentro de la carpeta "Users" que esta dentro de la unidad C. Que sería C:\Users\TU_USUARIO.
+En caso que la variable de entorno no está configurada, podemos observar en esta tabla, que el valor predeterminado de la variable será un subdirectorio llamado "go".
 
-Para Linux y Max, también será en el directorio Home del usuario.
+Que en Windows será dentro del directorio de tu usuario. Este se encuentra en la unidad C, y carpeta "Users". Que sería esto C:\Users\TU_USUARIO.
+
+Para Linux y Max, también será dentro del directorio Home del usuario.
+
+Siempre y cuando, no hayamos instalado una distribución de Go en estos directorios.
 
 En cuanto a como configurar varios espacios de trabajo en la variable, según el sistema operativo el separador de directorios será uno de los que figura en esta tabla.
 
@@ -79,14 +83,21 @@ Entonces, este comando realiza la obtención del código fuente de repositorios 
 
 Luego de obtener el código, lo compilará e instalará automáticamente dentro del primer o único directorio listado de GOPATH.
 
+**go get**
+Entonces, cada vez que hacemos un import de un paquete remoto se ejecutará el comando _go get_ para resolver las rutas de importación y realizar dicha descarga.
+
+**gopath**
+Y el directorio donde hayamos definido GOPATH se usará para resolver declaraciones de importación locales y descargar los paquetes remotos como ya hemos visto antes.
+
 ---
 
 Ahora pasemos a realizar las instalaciones en cada sistema operativo.
 
+Para quienes vayan a instalar en Linux o Mac, les recomiendo seguir con atención el próximo video sobre la instalación en Windows. Ya que para no repetir lo mismo en tres videos, haré más detallada la explicación en este.
 
+----
 
-
+Refrencias de otra info para este video:
 
 https://github.com/golang/go/wiki/GoGetTools
-
 https://stackoverflow.com/questions/36017724/can-i-have-multiple-gopath-directories

@@ -66,10 +66,15 @@ Ejemplo:
 | hg | [Mercurial](https://www.mercurial-scm.org/downloads) |
 | bzr | [Bazaar](http://wiki.bazaar.canonical.com/Download) |
 
+Consideraciones:
+* `go get`
+* `gopath`
+
 #### Referencias
 
 * https://golang.org/doc/install
 * https://github.com/golang/go/wiki/GoGetTools
+* https://github.com/golang/go/wiki/SettingGOPATH
 ___
 
 ###### Página: [1](./lectura-1.md), [2](./lectura-2.md), [3](./lectura-3.md), [4]
