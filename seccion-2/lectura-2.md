@@ -1,13 +1,14 @@
 ## Instalación de Go
 
-![alt text](../resources/imgs/go_dl.png "The_Gopher")
-
 #### Pasos a seguir
 
 - Descargar e instalar el binario
 - Comprobar las variables de entorno
 - Instalar un versionador de código
 - Comprobar la instalación
+
+####  Descargar e instalar el binario
+![alt text](../resources/imgs/go_dl.png "The_Gopher")
 
 #### Variables de entorno
 
@@ -21,7 +22,6 @@ Valores predeterminados:
 
 ##### `GOPATH`
 
-Se utiliza para:
 - Ubicación del código fuente
 - Listar los workspaces
 - Importación de paquetes
@@ -32,14 +32,14 @@ Se utiliza para:
 | Linux | $HOME/go | /home/TU_USUARIO/go |
 | Mac | $HOME/go | /home/TU_USUARIO/go |
 
- Listar directorios en GOPATH:
+Configurar varios workspaces:
 
 | OS | SEPARADOR | EJEMPLO |
 | ------ | :------: | ------ |
 | Linux y Mac | : | GOPATH="/home/go:/other/gopath" |
 | Windows | ; | GOPATH="%USERPROFILE%/go;C:\other\gopath" |
  
-Estructura de directorios para GOPATH:
+Estructura de directorios:
 
 - src
 - bin
@@ -57,7 +57,7 @@ Ejemplo:
             bin/
                 mycmd
 
-#### Versionadores de código
+#### Instalar un versionador de código
 
 | COMANDO | VERSIONADOR |
 | ------ | ------ |
@@ -66,7 +66,6 @@ Ejemplo:
 | hg | [Mercurial](https://www.mercurial-scm.org/downloads) |
 | bzr | [Bazaar](http://wiki.bazaar.canonical.com/Download) |
 
-Consideraciones:
 * `go get`
 * `gopath`
 
