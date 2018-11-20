@@ -1,10 +1,10 @@
 ## Instalación en Windows
 
-Bueno, vamos a instalar Go en Windows siguiendo los pasos descriptos en el video anterior. El primero es:
+En esta clase instalaremos Go en Windows, ya vimos algunos conceptos en el video anterior. Así que vamos a ello.
 
 #### Descarga e instalación del binario
 
-Entonces lo primero que debemos realizar es descargar el binario en esta pagina: [https://golang.org/dl](https://golang.org/dl/).
+Lo primero que debemos hacer es descargar el binario en esta pagina: [https://golang.org/dl](https://golang.org/dl/).
 
 Veamos...
 
@@ -37,18 +37,19 @@ Podemos ver que aquí tenemos todos los archivos y carpetas de la instalación. 
 
 #### Comprobar la instalación
 
-- Comprobar la instalación
-
-La verificáramos ejecutando el comando *go version* para imprimir su versión.
+Para comprobar la instalación, lo podemos hacer ejecutando el comando *go version* que imprime la versión de Go. Si este fue correctamente instalado.
 
 ```sh
 $ go version
 ```
+
 Vamos a la terminal, en este caso el CMD de Windows, y ejecutamos. Bien, Go esta funcionando.
 
-Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT se configuró correctamente, y ademas que también se modificó la variable PATH del sistema operativo con el directorio binario de Go, porque fue reconocido el comando en el CMD.
+Podemos observar que ya se reconoce el comando, esto significa que la variable de entorno GOROOT que mencioné en el video anterior se configuró correctamente, y ademas que también se modificó la variable PATH de Windows con el directorio binario de Go, porque fue reconocido el comando en el CMD.
 
 Podemos ver, que se reconoce ejecutándolo en cualquier directorio.
+
+---
 
 #### Comprobar las variables de entorno
 
@@ -66,7 +67,7 @@ Vamos a ver. Ejecutamos el comando.
 
 Acá esta una, y acá la otra. Cada una con sus paths configurados.
 
-También podemos consultar directamente el valor de una variable en particular agregando al comando el nombre de dicha variable: "go env GOPATH"
+También podemos consultar directamente el valor de una variable en particular agregando al comando el nombre de dicha variable. Por ejemplo: "go env GOPATH"
 
 ---
 
@@ -86,7 +87,7 @@ Algo a tener en cuenta en este punto, es que tenemos dos tipos de variables de e
 
 Una global que corresponde al sistema, y otra de usuario. Es decir, las variables globales de sistema serán compartidas entre todos los usuarios del equipo -si tienen mas de un usuario-. En cambio las variables de usuario, solo la verá el usuario que estan utilizando.
 
-Nosotros vamos a configurar directamente todo en las variables de entorno del sistema.
+--- Nosotros vamos a configurar directamente todo en las variables de entorno del sistema.
 
 Podemos observar que efectivamente tenemos GOROOT con el path de instalación. Si no lo tenemos, debemos añadirlo.
 
@@ -100,7 +101,7 @@ Bien, ahora vamos a agregar el path de nuestro workspace, es decir, el directori
 
 Para agregar GOPATH vamos a Nueva, escribimos GOPATH en nombre de variable y luego en Valor de la variable pegamos el path que copiamos hace un momento.
 
-Ahora solo nos queda modificar la variable PATH agregando la sub-carpeta bin de nuestro workspace. Esto nos sirve para ejecutar nuestros proyectos compilados. 
+Ahora solo nos queda modificar la variable PATH agregando la sub-carpeta bin de nuestro workspace. Esto nos sirve para ejecutar los proyectos compilados. 
 
 Bien, para eso ubicamos esta variable “PATH” y damos clic en el botón “Editar”, ahora pegamos la dirección de nuestro workspace aquí, agregamos /bin y guardamos.
 
@@ -116,18 +117,50 @@ PATH: Le indicamos a Windows donde se encuentran los binarios, para así poner e
 
 Le damos clic en Aceptar, Aceptar.
 
-Ya tenemos Go instalado y configurado. Así que vamos a probar si funciona.
+Ya tenemos Go instalado y configurado.
 
 ---
 
 #### Instalar un versionador de código
 
+Pero aun nos resta instalar un versionador de código  para que Go quede 100% funcional como ya lo he explicado en el video anterior.
+
+Así que vamos a instalar Git, por ser un versionador muy bueno y bastante usado.
+
+Abrimos el link, y descargamos la version para Windows.
+
+Esperamos que finalice la descarga, y lo ejecutamos para proceder con la instalación.
 
 
 
 
+---
 
+#### Ejecutar un "Hola Mundo".
 
+Crearemos el fichero hola-mundo.go
+
+Para ello, por ahora solo utilizaremos el bloc de notas de Windows o cualquier editor de texto plano.
+
+Luego instalaremos y usaremos el Visual Studio Code.
+
+Entonces vamos a escribir este código que vemos aquí.
+
+Listo, ahora vamos a guardarlo en nuestro espacio de trabajo. Creamos una carpeta que le podemos poner de nombre "holamundo" también y ponemos como nombre: hola-mundo.go
+
+Volvamos al CMD, entramos al directorio que hemos creado, y escribimos este comando:
+
+go run hola-mundo.go
+
+Listo, tenemos nuestro primer Hola Mundo! Genial
+
+Lo que hizo este comando fue compilar y ejecutar el programa.
+
+Si solo hubiéramos querido compilar, sin ejecutar, el comando a utilizar sería _go build_
+
+---
+
+En este caso para imprimir el "Hola Mundo" usamos `println(string)` es una función predefinida, y por eso no requiere referenciar ningún paquete.
 
 
 
@@ -135,6 +168,7 @@ Ya tenemos Go instalado y configurado. Así que vamos a probar si funciona.
 
 
 ---
+
 
 
 

@@ -1,8 +1,5 @@
 En esta clase previa a ejecutar la instalación en cada sistema operativo explicaré las cosas comunes con el objetivo de no repetir lo mismo en cada uno de ellos.
 
-Igualmente recomiendo a todos, aunque no vayan a instalar Go en Windows. Ver con atención el video de la siguiente clase, ya que me explayaré en la explicación un poco más en cada paso y les servirá para entender mejor.
-
-
 Entonces, los pasos que vamos a realizar en cada sistema operativo serán:
 
 - Descargar e instalar el binario
@@ -100,7 +97,7 @@ Y el directorio donde hayamos definido GOPATH se usará para resolver declaracio
 
 ---
 
-Llegó el momento de comenzar con las instalaciones. Recuerden quienes vayan a instalar en Linux o Mac, que les recomiendo seguir con atención el próximo video sobre la instalación en Windows ya que explicaré algunas cosas más.
+Llegó el momento de comenzar con las instalaciones. Nos vemos en el próximo video.
 
 ----
 
